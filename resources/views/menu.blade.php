@@ -409,6 +409,7 @@
 
       })(jQuery);
      </script>
+  @yield('pie')
   <!-- end: Javascript -->
   </body>
 </html>
