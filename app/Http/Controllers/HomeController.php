@@ -33,7 +33,7 @@ class HomeController extends Controller
             return "Ingresaste".Auth::user()->usuario;
 
         }else{
-            return view('/');
+            return "No ingresaste";
         }        
     }    
 }
