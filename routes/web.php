@@ -14,3 +14,8 @@
 Route::get('/', function () {
     return view('menu');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+Route::post('/sign_in', 'HomeController@verificar')->name('sign_in');
