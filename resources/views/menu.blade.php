@@ -87,6 +87,7 @@
                     <li class="ripple">
                       <a class="tree-toggle nav-header">
                         <span class="icons icon-user-female"></span>Usuarios
+                         <span class="fa-angle-right fa right-arrow text-right"></span>
                       </a>
                       <ul class="nav nav-list tree">
                         <li><a href="agregar_usuario.html"><span class="icons icon-people"></span>Aregar Usuario</a></li>
@@ -99,6 +100,7 @@
                   <!--Inicio Menu usuario estandar-->
                     <li class="active ripple">
                       <a class="tree-toggle nav-header" href="index_estandar.html"><span class="fa-home fa"></span> Inicio Estandar
+                       <span class="fa-angle-right fa right-arrow text-right"></span>
                       </a>
                       <ul class="nav nav-list tree">
                           <li><a href="ver_rep_es.html"><span class="fa fa-file-text"></span>Ver Reportes</a></li>
