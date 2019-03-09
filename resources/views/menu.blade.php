@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  
+
   <meta charset="utf-8">
   <meta name="description" content="Miminium Admin Template 2">
   <meta name="author" content="Isna Nur Azis">
   <meta name="keyword" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>SARTASIM KULLAKITA</title>
- 
+
     <!-- start: Css -->
     <link rel="stylesheet" type="text/css" href="{{asset('css/bootstrap.min.css')}}">
 
@@ -37,15 +37,15 @@
                 <span class="middle"></span>
                 <span class="bottom"></span>
               </div>
-                <a href="#" class="navbar-brand"> 
+                <a href="#" class="navbar-brand">
                  <b>SARTASIM KULLAKITA</b>
-                </a>           
+                </a>
               <ul class="nav navbar-nav navbar-right user-nav">
                 <li class="user-name"><span>Nombre del usuario</span></li>
                   <li class="dropdown avatar-dropdown">
                    <img src="{{asset('img/avatar.jpg')}}" class="img-circle avatar" alt="user name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"/>
                    <ul class="dropdown-menu user-dropdown">
-                     <li><a href="#"><span class="fa fa-user"></span> Mi Perfil</a></li>                  
+                     <li><a href="#"><span class="fa fa-user"></span> Mi Perfil</a></li>
                      <li class="more">
                       <ul>
                         <li><a href="#"><span class="fa fa-power-off "></span>Cerrar Sesion</a></li>
@@ -60,7 +60,7 @@
       <!-- end: Header -->
 
       <div class="container-fluid mimin-wrapper">
-  
+
           <!-- start:Left Menu -->
             <div id="left-menu">
               <div class="sub-left-menu scroll">
@@ -70,118 +70,107 @@
                       <h1 class="animated fadeInLeft">21:00</h1>
                       <p class="animated fadeInRight">Dia,Mes nuemro_dia año</p>
                     </li>
+                  <!--Inicio menu admin-->
                     <li class="active ripple">
-                      <a class="tree-toggle nav-header" href="#"><span class="fa-home fa"></span> Inicio 
+                      <a class="tree-toggle nav-header" href="index_admin.html"><span class="fa-home fa"></span> Inicio
                         <span class="fa-angle-right fa right-arrow text-right"></span>
                       </a>
                       <ul class="nav nav-list tree">
-                          <li><a href="#">Reporte-Atencio caso</a></li>
-                          <li><a href="#">Reporte-Problematica</a></li>
-                          <li><a href="#">Reporte-por edad</a></li>
-                          <li><a href="#">Reporte-documento de identificacion</a></li>
-                          <li><a href="#">Reporte-lugar de origen</a></li>
-                          <li><a href="#">Reporte-ocupacion</a></li>
+                          <li><a href="rep_atencion.html"><span class="fa fa-file-text"></span>Reporte-Atencio caso</a></li>
+                          <li><a href="rep_problematica.html"><span class="fa fa-file-text"></span>Reporte-Problematica</a></li>
+                          <li><a href="rep_edad.html"><span class="fa fa-file-text"></span>Reporte-por edad</a></li>
+                          <li><a href="rep_documento.html"><span class="fa fa-file-text"></span>Reporte-documento de identificacion</a></li>
+                          <li><a href="rep_origen.html"><span class="fa fa-file-text"></span>Reporte-lugar de origen</a></li>
+                          <li><a href="rep_ocupacion.html"><span class="fa fa-file-text"></span>Reporte-ocupacion</a></li>
                       </ul>
                     </li>
                     <li class="ripple">
                       <a class="tree-toggle nav-header">
-                        <span class="fa-diamond fa"></span>Usuarios
+                        <span class="icons icon-user-female"></span>Usuarios
+                      </a>
+                      <ul class="nav nav-list tree">
+                        <li><a href="agregar_usuario.html"><span class="icons icon-people"></span>Aregar Usuario</a></li>
+                        <li><a href="modificar_usuario.html"><span class="fa fa-edit"></span>Modificar Datos</a></li>
+                        <li><a href="listar_usuario.html"><span class="fa fa-list-alt"></span>Mostrar Usuarios</a></li>
+                        <li><a href="ver_perfil.html"><span class="icons icon-list"></span>Ver Perfil</a></li>
+                      </ul>
+                    </li>
+                  <!--fin menu admin-->
+                  <!--Inicio Menu usuario estandar-->
+                    <li class="active ripple">
+                      <a class="tree-toggle nav-header" href="index_estandar.html"><span class="fa-home fa"></span> Inicio Estandar
+                      </a>
+                      <ul class="nav nav-list tree">
+                          <li><a href="ver_rep_es.html"><span class="fa fa-file-text"></span>Ver Reportes</a></li>
+                          <li><a href="editar_rep_es.html"><span class="fa fa-edit"></span>Editar Observaciones</a></li>
+                          <li><a href="exportar.html"><span class="fa fa-file-pdf-o"></span>Exportar</a></li>
+                      </ul>
+                    </li>
+                    <li class="ripple">
+                      <a class="tree-toggle nav-header">
+                        <span class="icons icon-login"></span>Ficha de Ingreso
                         <span class="fa-angle-right fa right-arrow text-right"></span>
                       </a>
                       <ul class="nav nav-list tree">
-                        <li><a href="#">Aregar Usuario</a></li>
-                        <li><a href="#">Modificar Datos</a></li>
-                        <li><a href="#">Mostrar Usuarios</a></li>
-                        <li><a href="#">Ver Perfil</a></li>
-
+                        <li><a href="agregar_ingreso_1.html"><span class="fa fa fa-file"></span>Aregar Ingreso</a></li>
+                        <li><a href="modificar_ingreso_1.html"><span class="fa fa-edit"></span>Modificar Ingreso</a></li>
+                        <li><a href="mostrar_ingreso.html"><span class="fa fa-list-alt"></span>Mostrar Ingreso</a></li>
                       </ul>
                     </li>
+                    <li class="ripple">
+                      <a class="tree-toggle nav-header">
+                        <span class="fa fa-folder-open"></span>Ficha Social
+                        <span class="fa-angle-right fa right-arrow text-right"></span>
+                      </a>
+                      <ul class="nav nav-list tree">
+                        <li><a href="agregar_social_1.html"><span class="fa fa fa-file"></span>Aregar Social</a></li>
+                        <li><a href="modificar_social_1.html"><span class="fa fa-edit"></span>Modificar Social</a></li>
+                        <li><a href="mostrar_social.html"><span class="fa fa-list-alt"></span>Mostrar Social</a></li>
+                      </ul>
+                    </li>
+                    <li class="ripple">
+                      <a class="tree-toggle nav-header">
+                        <span class="fa fa-child"></span>Ficha Psicologica
+                        <span class="fa-angle-right fa right-arrow text-right"></span>
+                      </a>
+                      <ul class="nav nav-list tree">
+                        <li><a href="agregar_psicologico_1.html"><span class="fa fa fa-file"></span>Aregar Psicologico</a></li>
+                        <li><a href="modificar_psicologico_1.html"><span class="fa fa-edit"></span>Modificar Psicologico</a></li>
+                        <li><a href="mostrar_psicologico.html"><span class="fa fa-list-alt"></span>Mostrar Psicologico</a></li>
+                      </ul>
+                    </li>
+                    <li class="ripple">
+                      <a class="tree-toggle nav-header">
+                        <span class="icons icon-logout"></span>Ficha Egreso
+                        <span class="fa-angle-right fa right-arrow text-right"></span>
+                      </a>
+                      <ul class="nav nav-list tree">
+                        <li><a href="agregar_egreso_1.html"><span class="fa fa fa-file"></span>Aregar Egreso</a></li>
+                        <li><a href="modificar_egreso_1.html"><span class="fa fa-edit"></span>Modificar Egreso</a></li>
+                        <li><a href="mostrar_egreso.html"><span class="fa fa-list-alt"></span>Mostrar Egreso</a></li>
+                      </ul>
+                    </li>
+                  <!--Fin Menu usuario estandar-->
                   </ul>
                 </div>
             </div>
           <!-- end: Left Menu -->
 
-      
+
           <!-- start: content -->
           <div id="content">
-                <div class="panel">
-                  <div class="panel-body">
-                      <div class="col-md-6 col-sm-12">
-                        <h3 class="animated fadeInLeft">Modulo Administrador - Inicio</h3>
-                      </div>
-                  </div>                    
-                </div>
-            
 
-            <div class="form-element">
-               <div class="col-md-12">
-                      <div class="panel form-element-padding">
-                        <div class="panel-heading">
-                         <h4>Informacion rapída del sistema </h4>
-                        </div>
-                        <div class="panel-body" style="padding-bottom:15px;">
-
-                        <!--Inicio buscador por fecha-->
-                            <div class="col-md-10">
-                              <div class="col-md-3">
-                                <label>Mostrar indicadores de:</label>
-                              </div>
-                               <div class="col-md-3">
-                               <input type="date" class="form-text" id="entry_date" name="entry_date">
-                               </div>
-                            </div>
-                         <!--Fin buscador por fecha-->
-
-                          <!--Inicia Indicador 1-->
-                            <div class="col-md-3">
-                                <div class="panel">
-                                  <div class="panel-heading-white panel-heading text-center" >
-                                      <h4 href="">Atencion de casos</h4>
-                                    </div>
-                                    <div class="panel-body">
-                                    <center>
-                                      <canvas class="doughnut-chart"></canvas>
-                                      <div class="col-md-2" >
-                                        <a align="right" href="rep_atencion.html">Ver</a>
-                                      </div>
-                                    </center>
-                                  </div>
-                                </div>
-                            </div>
-                          <!--Fin de Indicador 1-->
-
-                          <!--Inicio Indiador 2-->
-                            <div class="col-md-3">
-                              <div class="panel">
-                                   <div class="panel-heading-white panel-heading text-center">
-                                      <h4>Problematica de Ingreso</h4>
-                                    </div>
-                                    <div class="panel-body">
-                                        <center>
-                                        <canvas class="pie-chart"></canvas>
-                                        <div class="col-md-2" >
-                                        <a align="right" href="">Ver</a>
-                                        </div>
-                                        </center>
-                                    </div>
-                              </div>
-                            </div>
-                          <!--Fin Indicador 2-->
-                        </div>
-                      </div>
-                </div>
-            </div>
 
           </div>
-          <!-- end: content -->          
-      
+          <!-- end: content -->
+
 
     <!-- start: Javascript -->
     <script src="{{asset('js/jquery.min.js')}}"></script>
     <script src="{{asset('js/jquery.ui.min.js')}}"></script>
     <script src="{{asset('js/bootstrap.min.js')}}"></script>
-   
-    
+
+
     <!-- plugins -->
     <script src="{{asset('js/plugins/moment.min.js')}}"></script>
     <script src="{{asset('js/plugins/fullcalendar.min.js')}}"></script>
@@ -387,7 +376,7 @@
                 });
 
             };
-        
+
         //  end:  Chart =============
 
         // start: Maps============
