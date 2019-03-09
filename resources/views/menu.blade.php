@@ -48,7 +48,7 @@
                      <li><a href="#"><span class="fa fa-user"></span> Mi Perfil</a></li>
                      <li class="more">
                       <ul>
-                        <li><a href="#"><span class="fa fa-power-off "></span>Cerrar Sesion</a></li>
+                        <li><a href="{{ route('login') }}"><span class="fa fa-power-off "></span>Cerrar Sesion</a></li>
                       </ul>
                     </li>
                   </ul>
@@ -72,7 +72,7 @@
                     </li>
                   <!--Inicio menu admin-->
                     <li class="active ripple">
-                      <a class="tree-toggle nav-header" href="index_admin.html"><span class="fa-home fa"></span> Inicio Admin
+                      <a class="tree-toggle nav-header" href="index_admin.html"><span class="fa-home fa"></span> Inicio
                         <span class="fa-angle-right fa right-arrow text-right"></span>
                       </a>
                       <ul class="nav nav-list tree">

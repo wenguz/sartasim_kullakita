@@ -26,14 +26,14 @@ class HomeController extends Controller
     {
         return view('home');
     }
-    
+
     public function verificar(Request $request){
         //dd('hola');
         if(Auth::attempt(['usuario'=>$request->usuario,'password'=>$request->password])){
-            return "Ingresaste".Auth::user()->usuario;
+            return "Ingresaste ".Auth::user()->usuario;
 
         }else{
             return "No ingresaste";
-        }        
-    }    
+        }
+    }
 }
