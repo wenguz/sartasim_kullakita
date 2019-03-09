@@ -72,7 +72,7 @@
                     </li>
                   <!--Inicio menu admin-->
                     <li class="active ripple">
-                      <a class="tree-toggle nav-header" href="index_admin.html"><span class="fa-home fa"></span> Inicio
+                      <a class="tree-toggle nav-header" href="index_admin.html"><span class="fa-home fa"></span> Inicio Admin
                         <span class="fa-angle-right fa right-arrow text-right"></span>
                       </a>
                       <ul class="nav nav-list tree">
@@ -98,7 +98,7 @@
                     </li>
                   <!--fin menu admin-->
                   <!--Inicio Menu usuario estandar-->
-                    <li class="active ripple">
+                    <li class="ripple">
                       <a class="tree-toggle nav-header" href="index_estandar.html"><span class="fa-home fa"></span> Inicio Estandar
                        <span class="fa-angle-right fa right-arrow text-right"></span>
                       </a>
