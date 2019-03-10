@@ -44,14 +44,27 @@
                 <li class="user-name"><span>Nombre del usuario</span></li>
                   <li class="dropdown avatar-dropdown">
                    <img src="{{asset('img/avatar.jpg')}}" class="img-circle avatar" alt="user name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"/>
-                   <ul class="dropdown-menu user-dropdown">
-                     <li><a href="#"><span class="fa fa-user"></span> Mi Perfil</a></li>
-                     <li class="more">
-                      <ul>
-                        <li><a href="{{ route('login') }}"><span class="fa fa-power-off "></span>Cerrar Sesion</a></li>
-                      </ul>
-                    </li>
-                  </ul>
+
+                  <!--inicio menu de login-->
+                  @if (Route::has('login'))
+                    <ul class="dropdown-menu user-dropdown">
+                    @auth
+                      <li><a href="{{ url('/home') }}"><span class="fa fa-user"></span>Inicio</a></li>
+                      <li>
+                        <a href="{{route('logout')}}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                          <span class="fa fa-power-off "></span>Cerrar Sesion
+                        </a>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            {{csrf_field()}}
+                        </form>
+                      </li>
+                  @else
+                      <li><a href="{{ route('login') }}">Login</a></li>
+                      <li><a href="{{ route('register') }}">Register</a></li>
+                    @endauth
+                    </ul>
+                  @endif
+                  <!--fin menu de login-->
                 </li>
               </ul>
             </div>
