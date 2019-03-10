@@ -8,28 +8,28 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'SARTASIM KULLAKITA') }}</title>
 
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
+    <!-- start: Css -->
+    <link rel="stylesheet" type="text/css" href="{{asset('css/bootstrap.min.css')}}">
 
-    <!-- Fonts -->
-    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
+      <!-- plugins -->
+      <link rel="stylesheet" type="text/css" href="{{asset('css/plugins/font-awesome.min.css')}}"/>
+      <link rel="stylesheet" type="text/css" href="{{asset('css/plugins/simple-line-icons.css')}}"/>
+      <link rel="stylesheet" type="text/css" href="{{asset('css/plugins/animate.min.css')}}"/>
+      <link rel="stylesheet" type="text/css" href="{{asset('css/plugins/fullcalendar.min.css')}}"/>
+      <link href="{{asset('css/style.css')}}" rel="stylesheet">
+  <!-- end: Css -->
 
-    <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+  <link rel="shortcut icon" href="{{asset('img/logomi.png')}}">
 </head>
-<body>
+<body id="mimin" class="form-signin-wrapper">
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
+                    {{ config('app.name', 'SARTASIM KULLAKITA') }}
                 </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
