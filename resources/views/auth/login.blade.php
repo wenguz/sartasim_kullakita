@@ -48,8 +48,9 @@
                                 </div>
                                 <div class="text-center" style="padding:5px;">
                                     <a href="{{ route('password.request') }}">
-                                            {{ __('¿Olvidaste la contraseña?') }}
+                                            {{ __('¿Olvidaste la contraseña?') }} |
                                     </a>
+                                    <a href="{{ route('register') }}">{{ __('Registrarse') }}</a>
                                 </div>
                             </form>
                         </div>

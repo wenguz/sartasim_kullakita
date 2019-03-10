@@ -10,15 +10,17 @@
                 <a href="#" class="navbar-brand">
                  <b>SARTASIM KULLAKITA</b>
                 </a>
+                <!--inicio menu de login-->
+                  @if (Route::has('login'))
               <ul class="nav navbar-nav navbar-right user-nav">
-                <li class="user-name"><span>Nombre del usuario</span></li>
+               @auth
+                <li class="user-name"><span>Usuario: {{ Auth::user()->name }}</span></li>
                   <li class="dropdown avatar-dropdown">
                    <img src="{{asset('img/avatar.jpg')}}" class="img-circle avatar" alt="user name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"/>
 
-                  <!--inicio menu de login-->
-                  @if (Route::has('login'))
+
                     <ul class="dropdown-menu user-dropdown">
-                    @auth
+
                       <li><a href="{{ url('/home') }}"><span class="fa fa-user"></span>Inicio</a></li>
                       <li>
                         <a href="{{route('logout')}}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
@@ -30,7 +32,7 @@
                       </li>
                   @else
                       <li><a href="{{ route('login') }}">Login</a></li>
-                      <li><a href="{{ route('register') }}">Register</a></li>
+                      <li><a href="{{ route('register') }}">Registrarse</a></li>
                     @endauth
                     </ul>
                   @endif
