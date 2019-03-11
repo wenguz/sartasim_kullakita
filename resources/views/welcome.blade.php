@@ -25,7 +25,7 @@
       @include('layouts.navbar')
       <!-- end: Header -->
 
-      <div class="container-fluid mimin-wrapper">
+    <div class="container-fluid mimin-wrapper">
 
           <!-- start:Left Menu -->
            @include('layouts.menu')
@@ -38,6 +38,7 @@
 
           </div>
           <!-- end: content -->
+    </div>
 
 
     <!-- start: Javascript -->
