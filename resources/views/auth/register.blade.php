@@ -45,7 +45,7 @@
                                               <label>{{ __('Foto Perfil') }}</label>
                                               <br>
                                               <div class="form-group note-group-select-from-files">
-                                              <input class="note-image-input form-control" type="file" name="files" accept="image/*" multiple="multiple">
+                                              <input class="note-image-input form-control" type="file" name="files" accept="img/*" multiple="multiple">
                                               </div>
                                         </div>
 
@@ -82,7 +82,12 @@
                                     </div>
 
                                     <div class="form-group form-animate-text" style="margin-top:10px !important;">
-                                        <input id="email" type="email" class="form-text" name="email" required>
+                                        <input id="email" type="email" class="form-text{{$errors->has('email') ? 'is-invalid':''}}" name="email" required>
+                                            @if ($errors->has('email'))
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $errors->first('email') }}</strong>
+                                                </span>
+                                            @endif
                                         <span class="bar"></span>
                                         <label >{{ __('Email') }}</label>
                                     </div>

@@ -6,13 +6,15 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
+use Illuminate\Database\Eloquent\SoftDeletes;
+
 class User extends Authenticatable
 {
     //use HashRoles;
     use Notifiable;
 
     protected $table='users';
-    protected $primaryKey='id';
+    protected $primaryKey='id_usuario';
     public $timestamps=false;
     public $rememberTokenName=false;
 
@@ -22,9 +24,6 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-         'usuario', 'password',
+         'id_usuario','usuario', 'password','email',
     ];
-
-
-
 }

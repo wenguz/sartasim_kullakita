@@ -18,7 +18,7 @@ class CreateRolesUsersTable extends Migration
             $table->unsignedInteger('id_users');
             $table->unsignedInteger('id_roles');
             $table->foreign('id_roles')->references('id_roles')->on('roles');
-            $table->foreign('id_users')->references('id')->on('users');
+            $table->foreign('id_users')->references('id_usuario')->on('users');
         });
     }
 
