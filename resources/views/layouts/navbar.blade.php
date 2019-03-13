@@ -14,14 +14,17 @@
                   @if (Route::has('login'))
               <ul class="nav navbar-nav navbar-right user-nav">
                @auth
-                <li class="user-name"><span>Usuario: {{ Auth::user()->name }}</span></li>
-                  <li class="dropdown avatar-dropdown">
-                   <img src="{{asset('img/avatar.jpg')}}" class="img-circle avatar" alt="user name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"/>
-
-
+                  <li class="dropdown ">
+                    <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                      <img width="20px" height="20px" src="{{ asset('uploads/avatars/'.Auth::user()->avatar) }}">{{ Auth::user()->usuario }}
+                    </a>
                     <ul class="dropdown-menu user-dropdown">
-
-                      <li><a href="{{ url('/home') }}"><span class="fa fa-user"></span>Inicio</a></li>
+                      <li><a href="{{ url('/home') }}">Inicio</a></li>
+                      <li>
+                        <a href="{{ route('user.profile') }}"><span class="fa fa-user"></span>
+                           Perfil
+                        </a>
+                      </li>
                       <li>
                         <a href="{{route('logout')}}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                           <span class="fa fa-power-off "></span>Cerrar Sesion
@@ -38,6 +41,7 @@
                   @endif
                   <!--fin menu de login-->
                 </li>
+
               </ul>
             </div>
           </div>

@@ -18,6 +18,7 @@ class CreateUsersTable extends Migration
             $table->string('usuario');
             $table->string('password');
             $table->string('email')->nullable();
+            $table->string('avatar')->default("default_avatar.gif");
         });
     }
 

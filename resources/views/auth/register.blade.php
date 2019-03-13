@@ -41,15 +41,7 @@
                                         <span class="bar"></span>
                                         <label >{{ __('Telefono') }}</label>
                                     </div>
-                                    <div class="form-group form-animate-text" style="margin-top:10px !important;">
-                                              <label>{{ __('Foto Perfil') }}</label>
-                                              <br>
-                                              <div class="form-group note-group-select-from-files">
-                                              <input class="note-image-input form-control" type="file" name="files" accept="img/*" multiple="multiple">
-                                              </div>
-                                        </div>
-
-                                </div>
+                                 </div>
                                 <!--Fin columna izquierda forlmualrio-->
                                 <!--Inicio columna derecha forlmualrio-->
                                 <div class="col-md-6">
