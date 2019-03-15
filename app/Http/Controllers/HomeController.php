@@ -30,7 +30,7 @@ class HomeController extends Controller
     public function verificar(Request $request){
         //dd('hola');
         if(Auth::attempt(['usuario'=>$request->usuario,'password'=>$request->password])){
-            return "Usuario: ".Auth::user()->usuario;
+            return view('welcome');
 
         }else{
             return "No ingresaste";
