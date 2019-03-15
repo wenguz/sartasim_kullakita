@@ -22,24 +22,54 @@
                                 <!--Inicio columna izquierda forlmualrio-->
                                 <div class="col-md-6">
                                     <div class="form-group form-animate-text" style="margin-top:10px !important;">
-                                        <input id="nombre" type="text" class="form-text" name="nombre" required>
+                                        <input id="nombre" type="text" class="form-text{{ $errors->has('persona_nombre') ? ' is-invalid' : '' }}" name="persona_nombre" required>
+                                        @if ($errors->has('persona_nombre'))
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $errors->first('presona_nombre') }}</strong>
+                                                </span>
+                                        @endif
                                         <span class="bar"></span>
                                         <label >{{ __('Nombres') }}</label>
                                     </div>
                                     <div class="form-group form-animate-text" style="margin-top:10px !important;">
-                                        <input id="apellido" type="text" class="form-text" name="apellido" required>
+                                        <input id="apellido" type="text" class="form-text{{ $errors->has('persona_apellido') ? ' is-invalid' : '' }}" name="persona_apellido" value="{{ old('persona_apellido') }}"required>
+                                        @if ($errors->has('persona_apellido'))
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $errors->first('presona_apellido') }}</strong>
+                                                </span>
+                                        @endif
                                         <span class="bar"></span>
                                         <label >{{ __('Apellidos') }}</label>
                                     </div>
                                     <div class="form-group form-animate-text" style="margin-top:10px !important;">
-                                        <input id="num_ci" type="text" class="form-text" name="num_ci" required>
+                                        <input id="num_ci" type="text" class="form-text{{ $errors->has('persona_ci') ? ' is-invalid' : '' }}" name="persona_ci" value="{{ old('persona_ci') }}" required>
+                                        @if ($errors->has('persona_ci'))
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $errors->first('presona_ci') }}</strong>
+                                                </span>
+                                        @endif
                                         <span class="bar"></span>
                                         <label >{{ __('Carnet de Identidad') }}</label>
                                     </div>
                                     <div class="form-group form-animate-text" style="margin-top:10px !important;">
-                                        <input id="telefono" type="number" class="form-text" name="telefono" required>
+                                        <input id="telefono" type="number" class="form-text{{ $errors->has('persona_telefono') ? ' is-invalid' : '' }}" name="persona_telefono" value="{{ old('persona_telefono') }}" required>
+                                        @if ($errors->has('persona_telefono'))
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $errors->first('presona_telefono') }}</strong>
+                                                </span>
+                                        @endif
                                         <span class="bar"></span>
                                         <label >{{ __('Telefono') }}</label>
+                                    </div>
+                                    <div class="form-group form-animate-text" style="margin-top:10px !important;">
+                                        <input id="telefono" type="number" class="form-text{{ $errors->has('persona_celular') ? ' is-invalid' : '' }}" name="persona_celular" value="{{ old('persona_celular') }}" required>
+                                        @if ($errors->has('persona_celular'))
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $errors->first('presona_celular') }}</strong>
+                                                </span>
+                                        @endif
+                                        <span class="bar"></span>
+                                        <label >{{ __('Celular') }}</label>
                                     </div>
                                  </div>
                                 <!--Fin columna izquierda forlmualrio-->

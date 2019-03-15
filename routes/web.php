@@ -25,3 +25,6 @@ Route::post('/sign_in', 'HomeController@verificar')->name('sign_in');
 Route::get('/profile', 'UserController@profile')->name('user.profile');
 //edita el perfil
 Route::post('/profile', 'UserController@update_profile')->name('user.profile.update');
+
+///PARA REGISTRAR DATOS DE PERSONA
+Route::post('personas'.'PersonaController');
