@@ -8,12 +8,12 @@ use Illuminate\Support\Facades\Auth;
 class UserController extends Controller
 {
     public function __construct() {
-    $this->middleware('auth')->only('profile', 'update_profile');
+    $this->middleware('auth')->only('usuario/profile', 'update_profile');
   }
   //envía los datos del usuario logueado a la vista.
   public function profile() {
     $user = Auth::user();
-    return view('profile', ['user' => $user]);
+    return view('usuario/profile', ['user' => $user]);
   }
   //valida que sea una imagen lo que enviamos, la sube a la carpeta public/uploads/avatars  y después guarda el nombre en la base de datos y volvemos al perfil.
   public function update_profile(Request $request) {

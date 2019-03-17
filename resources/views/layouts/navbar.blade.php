@@ -7,7 +7,7 @@
                 <span class="middle"></span>
                 <span class="bottom"></span>
               </div>
-                <a href="#" class="navbar-brand">
+                <a href="{{ url('/') }}" class="navbar-brand">
                  <b>SARTASIM KULLAKITA</b>
                 </a>
                 <!--inicio menu de login-->
