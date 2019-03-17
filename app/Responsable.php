@@ -11,6 +11,6 @@ class Responsable extends Model
      public $timestamps=false;
 
     protected $fillable = [
-         'id_responsable','cargo',
+         'id_responsable','cargo','id_persona_fk','id_ins_caso_fk',
     ];
 }

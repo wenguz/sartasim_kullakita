@@ -19,6 +19,7 @@ class CreateTipoDocumentosTable extends Migration
             $table->string('doc_estado')->default('no tiene');
             $table->date('doc_expira');
             $table->string('doc_numero');
+            //$table->integer('id_victima_fk');
         });
     }
 

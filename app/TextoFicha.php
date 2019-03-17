@@ -11,6 +11,6 @@ class TextoFicha extends Model
      public $timestamps=false;
 
     protected $fillable = [
-         'id_texto','texto_ficha','texto_area','texto_seccion','texto_descripsion','texto_fecha','texto_observacion',
+         'id_texto','texto_ficha','texto_area','texto_seccion','texto_descripsion','texto_fecha','texto_observacion','id_caso_fk',
     ];
 }

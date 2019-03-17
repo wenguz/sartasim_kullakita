@@ -11,6 +11,6 @@ class UnidadEducativa extends Model
      public $timestamps=false;
 
     protected $fillable = [
-         'id_u_educativa','ue_nombre', 'ue_turno','ue_zona','ue_calle','ue_numero',
+         'id_u_educativa','ue_nombre', 'ue_turno','ue_zona','ue_calle','ue_numero','id_victima_fk',
     ];
 }

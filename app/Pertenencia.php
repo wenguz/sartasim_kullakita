@@ -11,7 +11,6 @@ class Pertenencia extends Model
      public $timestamps=false;
 
     protected $fillable = [
-         'id_pertenencia','descripsion', 'estado',
-         //'id_victima_fk',
+         'id_pertenencia','descripsion', 'estado','id_victima_fk',
     ];
 }

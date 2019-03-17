@@ -12,5 +12,7 @@ class DocumentoCaso extends Model
 
     protected $fillable = [
          'id_doc_caso','docc_num','docc_fecha','docc_estado','docc_observacion',
+         	'id_caso_fk',
+         	'id_parametrica_fk',
     ];
 }

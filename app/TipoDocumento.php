@@ -11,6 +11,6 @@ class TipoDocumento extends Model
      public $timestamps=false;
 
     protected $fillable = [
-         'id_tipo_doc','doc_nombre', 'doc_estado','doc_expira','doc_numero',
+         'id_tipo_doc','doc_nombre', 'doc_estado','doc_expira','doc_numero','id_victima_fk',
     ];
 }
