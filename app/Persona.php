@@ -4,6 +4,8 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use App\User;
+use App\Responsable;
+
 
 class Persona extends Model
 {
@@ -18,5 +20,9 @@ class Persona extends Model
     ///para la llave que va a users.Estos son metodos de Eloquent
     public function users (){
         return $this->hasMany('App\User');
+    }
+     ///para la llave que va a responsabless.Estos son metodos de Eloquent
+    public function responsables (){
+        return $this->hasMany('App\Responsable');
     }
 }

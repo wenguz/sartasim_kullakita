@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use App\Caso;
+use App\Parametrica;
 
 class DocumentoCaso extends Model
 {
@@ -16,8 +17,12 @@ class DocumentoCaso extends Model
          	'id_caso_fk',
          	'id_parametrica_fk',
     ];
-    ///para la lalve foranea id_persona_fk que viene de la tabla personas.Estos son metodos de Eloquent
+    ///para la lalve foranea id_caso_fk que viene de la tabla casos.Estos son metodos de Eloquent
     public function casos(){
         return $this->belongsTo('App\Caso');
+    }
+    ///para la lalve foranea id_parametrica_fk que viene de la tabla parametricas.Estos son metodos de Eloquent
+    public function parametricas(){
+        return $this->belongsTo('App\Parametrica');
     }
 }

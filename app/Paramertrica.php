@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\DocumentoCaso;
 
 class Paramertrica extends Model
 {
@@ -13,4 +14,8 @@ class Paramertrica extends Model
     protected $fillable = [
          'id_parametrica','dominio', 'nombre','estado',
     ];
+    ///para la llave que va a documento_casos.Estos son metodos de Eloquent
+    public function documento_casos (){
+        return $this->hasMany('App\DocumentoCaso');
+    }
 }
