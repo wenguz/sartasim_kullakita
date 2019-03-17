@@ -9,7 +9,7 @@
                     </li>
                   <!--Inicio menu admin-->
                     <li class="active ripple">
-                      <a class="tree-toggle nav-header" href="index_admin.html"><span class="fa-home fa"></span> Inicio
+                      <a class="tree-toggle nav-header" href="index_admin.html"><span class="fa-home fa"></span> Inicio Administrador
                         <span class="fa-angle-right fa right-arrow text-right"></span>
                       </a>
                       <ul class="nav nav-list tree">
