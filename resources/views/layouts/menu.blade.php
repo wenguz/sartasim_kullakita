@@ -29,7 +29,7 @@
                       <ul class="nav nav-list tree">
                         <li><a href="{{ route('register') }}"><span class="icons icon-people"></span>Aregar Usuario</a></li>
                         <li><a href="modificar_usuario.html"><span class="fa fa-edit"></span>Modificar Datos</a></li>
-                        <li><a href="listar_usuario.html"><span class="fa fa-list-alt"></span>Mostrar Usuarios</a></li>
+                        <li><a href="{{ route('users.index') }}"><span class="fa fa-list-alt"></span>Mostrar Usuarios</a></li>
                         <li><a href="ver_perfil.html"><span class="icons icon-list"></span>Ver Perfil</a></li>
                       </ul>
                     </li>

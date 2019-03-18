@@ -30,6 +30,6 @@ class User extends Authenticatable
 
     ///para la lalve foranea id_persona_fk que viene de la tabla personas.Estos son metodos de Eloquent
     public function personas(){
-        return $this->hasOne('App\Persona');
+        return $this->belongsTo('App\Persona');
     }
 }

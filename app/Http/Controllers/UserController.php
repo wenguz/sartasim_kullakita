@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\User;
+use App\Persona;
+use Illuminate\Support\Facades\DB;
 
 class UserController extends Controller
 {
@@ -30,5 +33,16 @@ class UserController extends Controller
 
     return redirect()->route('user.profile');
   }
-
+  public function index (){
+    /*$personas=Persona::orderBy('id_persona','ASC')
+    ->paginate(2);
+    $users=User::orderBy('id_persona_fk','ASC')
+    ->paginate(2);
+    */
+    $personas=DB::table('personas')
+    ->join('users','personas.id_persona','=','users.id_persona_fk')
+    ->orderBy('id_persona_fk','ASC')
+    ->paginate(2);
+    return view('usuario.index',compact('personas'));
+    }
 }

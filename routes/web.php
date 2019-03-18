@@ -26,5 +26,8 @@ Route::get('usuario/profile', 'UserController@profile')->name('user.profile');
 //edita el perfil
 Route::post('usuario/profile', 'UserController@update_profile')->name('user.profile.update');
 
+Route::resource('personas','PersonaController');
+Route::resource('users','UserController');
+
 ///PARA REGISTRAR DATOS DE PERSONA
 Route::post('personas'.'PersonaController');
