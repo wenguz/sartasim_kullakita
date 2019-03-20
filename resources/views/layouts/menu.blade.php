@@ -28,9 +28,13 @@
                       </a>
                       <ul class="nav nav-list tree">
                         <li><a href="{{ route('register') }}"><span class="icons icon-people"></span>Aregar Usuario</a></li>
-                        <li><a href="modificar_usuario.html"><span class="fa fa-edit"></span>Modificar Datos</a></li>
+                      <!--  <li><a href="modificar_usuario.html"><span class="fa fa-edit"></span>Modificar Datos</a></li> -->
                         <li><a href="{{ route('users.index') }}"><span class="fa fa-list-alt"></span>Mostrar Usuarios</a></li>
-                        <li><a href="ver_perfil.html"><span class="icons icon-list"></span>Ver Perfil</a></li>
+
+                        <!--Cuando se hyabilite los roles debemos agregar que el rol sea admin-->
+                        @auth
+                        <li><a href="{{ route('users.show',Auth::user()->id_usuario) }}"><span class="icons icon-list"></span>Ver Perfil</a></li>
+                         @endauth
                       </ul>
                     </li>
                   <!--fin menu admin-->

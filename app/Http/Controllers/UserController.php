@@ -71,17 +71,22 @@ class UserController extends Controller
       $usu->usuario=$request->input('p_usua');
       $usu->email=$request->input('p_email');
       $usu->update();  */
-        $usu= User::findOrFail($person_id);   
+        $usu= User::findOrFail($person_id);
        $usu->fill(array(
                 'usuario'=>$request->input('p_usua'),
                 'email'=>$request->input('p_email')
             ))->update();
- 
+
       return redirect()->route('users.index');
     }
 
-    public function show(){
-
+    public function show($id_aut){
+      $person=DB::table('personas')
+    ->join('users','personas.id_persona','=','users.id_persona_fk')
+    ->where('users.id_usuario','=',$id_aut)
+    ->select('personas.*','personas.id_persona as id_persona','users.*')
+    ->first();
+      return view('usuario.show', compact('person'));
     }
 
     public function destroy($id){
@@ -91,12 +96,12 @@ class UserController extends Controller
         $u->delete();
        $p->delete();
        Session::flash('message','Eliminacion exitosa');
-      return redirect()->route('users.index'); 
+      return redirect()->route('users.index');
      }
      else{
       Session::flash('message','no se pudo eliminar');
       return redirect()->route('users.index');
      }
-         
+
     }
 }
