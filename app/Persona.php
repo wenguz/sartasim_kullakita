@@ -7,12 +7,14 @@ use App\User;
 use App\Responsable;
 
 
+
 class Persona extends Model
 {
+
+
     protected $table='personas';
     protected $primaryKey='id_persona';
      public $timestamps=false;
-
     protected $fillable = [
          'id_persona','persona_nombre', 'persona_apellido','persona_ci','persona_telefono','persona_celular',
     ];

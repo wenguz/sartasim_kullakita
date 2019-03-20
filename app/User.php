@@ -7,7 +7,6 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use App\Persona;
 
-use Illuminate\Database\Eloquent\SoftDeletes;
 
 class User extends Authenticatable
 {
@@ -16,7 +15,7 @@ class User extends Authenticatable
 
     protected $table='users';
     protected $primaryKey='id_usuario';
-    public $timestamps=false;
+     public $timestamps=false;
     public $rememberTokenName=false;
 
     /**
@@ -32,4 +31,5 @@ class User extends Authenticatable
     public function personas(){
         return $this->belongsTo('App\Persona');
     }
+
 }

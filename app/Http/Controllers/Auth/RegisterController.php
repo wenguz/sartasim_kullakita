@@ -80,6 +80,6 @@ class RegisterController extends Controller
             'id_persona_fk'=>$persona->id_persona,
         ]);
         $user->save();
-        return redirect()->route('home');
+        return redirect()->route('users.index');
     }
 }

@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use App\User;
 use App\Persona;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Session;
 
 class UserController extends Controller
 {
@@ -81,5 +82,22 @@ class UserController extends Controller
 
     public function show(){
 
+    }
+
+    public function destroy($id){
+     $p=Persona::find($id);
+     $u= User::find($id);
+     if ($p->id_persona == $u->id_persona_fk) {
+        $u->delete();
+
+       $p->delete();
+       Session::flash('message','Eliminacion exitosa');
+      return redirect()->route('users.index'); 
+     }
+     else{
+      Session::flash('message','no se pudo eliminar');
+      return redirect()->route('users.index');
+     }
+         
     }
 }

@@ -1,6 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
+@if(Session::has('message'))
+	<div>{{Session::get('message')}}</div>
+@endif
+
 <div id="content">
 	<div class="panel">
 		<div class="panel-body">
@@ -46,7 +50,11 @@
 														<td><img width="40px" height="40px" src="{{ asset('uploads/avatars/'.$persona->avatar) }}"> </td>
 														<td scope="row">{{$persona->email}}</td>
 														<td><a class="btn btn-info mb-1" href="{{action('UserController@edit',$persona->id_persona)}}"><i class="icons icon-pencil">Editar</i></a>
+															<form action="{{action('UserController@destroy',$persona->id_persona)}}" method="post">
+																{{csrf_field()}}
+																<input type="hidden" name="_method" value="DELETE">
 															<button type="submit" class="btn btn-danger" onclick="return confirm('seguro que quiere eliminar?')"><i class="icons icon-trash">Eliminar</i></button>
+															</form>
 														</td>
 													</tr>
 														@endforeach

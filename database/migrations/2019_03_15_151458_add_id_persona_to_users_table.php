@@ -15,7 +15,7 @@ class AddIdPersonaToUsersTable extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             $table->unsignedInteger('id_persona_fk');
-            $table->foreign('id_persona_fk')->references('id_persona')->on('personas');
+            $table->foreign('id_persona_fk')->references('id_persona')->on('personas')->onDeleted('cascade');
         });
     }
 
