@@ -20,6 +20,9 @@ class CreatePersonasTable extends Migration
             $table->string('persona_ci');
             $table->string('persona_telefono');
             $table->string('persona_celular');
+
+            $table->softDeletes();
+            $table->timestamps();
         });
     }
 

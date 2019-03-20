@@ -43,6 +43,7 @@
 												<tbody border="1px">
 													@if($personas->count() )
 														@forelse($personas as $persona)
+														@if($persona->deleted_at==null)
 													<tr>
 														<td>{{$persona->id_persona}}</td>
 														<td>{{$persona->persona_nombre}} {{$persona->persona_apellido}}</td>
@@ -57,6 +58,7 @@
 															</form>
 														</td>
 													</tr>
+													@endif
 														@endforeach
 													@else
 													<tr>

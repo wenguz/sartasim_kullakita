@@ -89,7 +89,6 @@ class UserController extends Controller
      $u= User::find($id);
      if ($p->id_persona == $u->id_persona_fk) {
         $u->delete();
-
        $p->delete();
        Session::flash('message','Eliminacion exitosa');
       return redirect()->route('users.index'); 

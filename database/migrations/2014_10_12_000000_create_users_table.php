@@ -19,6 +19,9 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->string('email')->nullable();
             $table->string('avatar')->default("default_avatar.gif");
+
+            $table->softDeletes();
+            $table->timestamps();
         });
     }
 
