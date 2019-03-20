@@ -19,7 +19,7 @@
 					<!--Inicio Tabla-->
 					<div class="panel-body">
 						<div class="col-md-12 padding-0" style="padding-bottom:20px;">
-							<a class="btn btn-success mb-3" href="agregar_usuario.html">Agregar Usuario</a>
+							<a class="btn btn-success mb-3" href="{{ route('register') }}">Agregar Usuario</a>
 							<div class="col-md-12 padding-0">
 								<br>
 								<div class="col-md-12">
@@ -30,8 +30,8 @@
 													<tr>
 														<th scope="col">Id</th>
 														<th scope="col">Nombre y Apellido</th>
-														<th scope="col">Fotografia</th>
 														<th scope="col">CI</th>
+														<th scope="col">Fotografia</th>
 														<th scope="col">Correo electronico</th>
 														<th scope="col">Opciones</th>
 													</tr>
@@ -45,7 +45,7 @@
 														<td>{{$persona->persona_ci}}</td>	
 														<td><img width="40px" height="40px" src="{{ asset('uploads/avatars/'.$persona->avatar) }}"> </td>
 														<td scope="row">{{$persona->email}}</td>
-														<td><a class="btn btn-info mb-1" href="modificar_usuario.html"><i class="icons icon-pencil">Editar</i></a>
+														<td><a class="btn btn-info mb-1" href="{{action('UserController@edit',$persona->id_persona)}}"><i class="icons icon-pencil">Editar</i></a>
 															<button type="submit" class="btn btn-danger" onclick="return confirm('seguro que quiere eliminar?')"><i class="icons icon-trash">Eliminar</i></button>
 														</td>
 													</tr>

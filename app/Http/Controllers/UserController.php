@@ -45,4 +45,41 @@ class UserController extends Controller
     ->paginate(2);
     return view('usuario.index',compact('personas'));
     }
+
+    //del formulario index.blade de usuario el boton editar
+    public function edit($id_personas){
+      $person=DB::table('personas')
+    ->join('users','personas.id_persona','=','users.id_persona_fk')
+    ->where('personas.id_persona','=',$id_personas)
+    ->select('personas.*','personas.id_persona as id_persona','users.email as email','users.usuario as usuario')
+    ->first();
+      return view('usuario.edit',compact('person'));
+    }
+
+    //del form edit.blade seactualizra  los datos
+    public function update(Request $request,$person_id){
+      $personas=Persona::find($person_id);
+      $personas->persona_nombre=$request->input('p_nombre');
+      $personas->persona_apellido=$request->input('p_apellido');
+      $personas->persona_ci=$request->input('p_ci');
+      $personas->persona_telefono=$request->input('p_telefono');
+      $personas->persona_celular=$request->input('p_celular');
+      $personas->save();
+
+     /* $usu=User::where('id_persona_fk','=',$person_id);
+      $usu->usuario=$request->input('p_usua');
+      $usu->email=$request->input('p_email');
+      $usu->update();  */
+        $usu= User::findOrFail($person_id);   
+       $usu->fill(array(
+                'usuario'=>$request->input('p_usua'),
+                'email'=>$request->input('p_email')
+            ))->update();
+ 
+      return redirect()->route('users.index');
+    }
+
+    public function show(){
+
+    }
 }
