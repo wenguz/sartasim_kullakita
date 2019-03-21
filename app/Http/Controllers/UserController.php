@@ -52,7 +52,7 @@ class UserController extends Controller
       $person=DB::table('personas')
     ->join('users','personas.id_persona','=','users.id_persona_fk')
     ->where('personas.id_persona','=',$id_personas)
-    ->select('personas.*','personas.id_persona as id_persona','users.email as email','users.usuario as usuario')
+    ->select('personas.*','personas.id_persona as id_persona','users.email as email','users.usuario as usuario','users.id_usuario as id_usuario')
     ->first();
       return view('usuario.edit',compact('person'));
     }
@@ -79,7 +79,7 @@ class UserController extends Controller
 
       return redirect()->route('users.index');
     }
-
+//metodo para mostrar el perfil del usario que esta en sesion
     public function show($id_aut){
       $person=DB::table('personas')
     ->join('users','personas.id_persona','=','users.id_persona_fk')

@@ -47,9 +47,14 @@
 													<tr>
 														<td>{{$persona->id_persona}}</td>
 														<td>{{$persona->persona_nombre}} {{$persona->persona_apellido}}</td>
-														<td>{{$persona->persona_ci}}</td>	
+														<td>{{$persona->persona_ci}}</td>
 														<td><img width="40px" height="40px" src="{{ asset('uploads/avatars/'.$persona->avatar) }}"> </td>
 														<td scope="row">{{$persona->email}}</td>
+														<!--Si el usuario esta logueado no puede eliminar su proipio registro-->
+														@if($persona->id_usuario==Auth::id())
+														<td><a class="btn btn-info mb-1" href="{{action('UserController@edit',$persona->id_persona)}}"><i class="icons icon-pencil">Editar</i></a>
+														</td>
+														@else
 														<td><a class="btn btn-info mb-1" href="{{action('UserController@edit',$persona->id_persona)}}"><i class="icons icon-pencil">Editar</i></a>
 															<form action="{{action('UserController@destroy',$persona->id_persona)}}" method="post">
 																{{csrf_field()}}
@@ -57,6 +62,7 @@
 															<button type="submit" class="btn btn-danger" onclick="return confirm('seguro que quiere eliminar?')"><i class="icons icon-trash">Eliminar</i></button>
 															</form>
 														</td>
+														@endif
 													</tr>
 													@endif
 														@endforeach
@@ -76,7 +82,7 @@
 					</div>
 					<!--Fin Tabla-->
 				</div>
-			</div>        
+			</div>
 		</div>
 	</div>
 	@endsection

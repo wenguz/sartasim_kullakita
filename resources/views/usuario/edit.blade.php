@@ -43,14 +43,21 @@
                                         <span class="bar"></span>
                                         <label >{{ __('Telefono') }}</label>
                                     </div>
-                                    
+
                                  </div>
                                 <!--Fin columna izquierda forlmualrio-->
                                 <!--Inicio columna derecha forlmualrio-->
                                 <div class="col-md-6">
                                     <div class="form-group form-animate-text" style="margin-top:10px !important;">
-                                        <input type="usuario" class="form-text" name="p_usua" value="{{ $person->usuario}}" required>
-                                        <span class="bar"></span>
+                                        @if($person->id_usuario==Auth::id())
+                                        <b>
+                                        <input type="usuario" class="form-text" name="p_usua" value="{{ $person->usuario}}" disabled="true">
+                                        </b>
+                                        @else
+                                            <input type="usuario" class="form-text" name="p_usua" value="{{ $person->usuario}}" required>
+                                            <span class="bar"></span>
+                                        @endif
+
                                         <label>{{ __('Usuario') }}</label>
                                     </div>
 
