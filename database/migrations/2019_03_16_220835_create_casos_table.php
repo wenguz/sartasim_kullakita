@@ -15,8 +15,8 @@ class CreateCasosTable extends Migration
     {
         Schema::create('casos', function (Blueprint $table) {
             $table->increments('id_caso');
-            $table->date('fecha_ingreso');
-            $table->date('fecha_egreso');
+            $table->datetime('fecha_ingreso');
+            $table->datetime('fecha_egreso')->nullable();
         });
     }
 

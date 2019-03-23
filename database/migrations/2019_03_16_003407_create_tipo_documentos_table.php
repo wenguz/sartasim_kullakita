@@ -17,8 +17,8 @@ class CreateTipoDocumentosTable extends Migration
             $table->increments('id_tipo_doc');
             $table->string('doc_nombre');
             $table->string('doc_estado')->default('no tiene');
-            $table->date('doc_expira');
-            $table->string('doc_numero');
+            $table->date('doc_expira')->nullable();
+            $table->string('doc_numero')->nullable();
             //$table->integer('id_victima_fk');
         });
     }

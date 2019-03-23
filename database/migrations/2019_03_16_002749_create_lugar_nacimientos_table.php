@@ -15,9 +15,9 @@ class CreateLugarNacimientosTable extends Migration
     {
         Schema::create('lugar_nacimientos', function (Blueprint $table) {
             $table->increments('id_lugarna');
-            $table->string('pais');
-            $table->string('departamento');
-            $table->string('provincia');
+            $table->string('pais')->nullable();
+            $table->string('departamento')->nullable();
+            $table->string('provincia')->nullable();
         });
     }
 

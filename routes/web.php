@@ -31,3 +31,7 @@ Route::resource('users','UserController');
 
 ///PARA REGISTRAR DATOS DE PERSONA
 Route::post('personas'.'PersonaController');
+
+//
+Route::resource('casos','CasoController');
+Route::post('casos'.'CasoController');

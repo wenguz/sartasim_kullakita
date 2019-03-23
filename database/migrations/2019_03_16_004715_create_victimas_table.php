@@ -17,14 +17,14 @@ class CreateVictimasTable extends Migration
             $table->increments('id_victima');
             $table->string('vic_nombre');
             $table->string('vic_apellido');
-            $table->integer('vic_edad');
-            $table->date('vic_fecha_nacimineto');
-            $table->integer('vic_num_hermanos');
-            $table->string('vic_procedencia');
-            $table->string('vic_nacionalidad');
-            $table->string('vic_direccion');
-            $table->string('vic_grado_academico');
-            $table->string('vic_curso_vencido');
+            $table->integer('vic_edad')->nullable();
+            $table->datetime('vic_fecha_nacimineto')->nullable();
+            $table->integer('vic_num_hermanos')->nullable();
+            $table->string('vic_procedencia')->nullable();
+            $table->string('vic_nacionalidad')->nullable();
+            $table->string('vic_direccion')->nullable();
+            $table->string('vic_grado_academico')->nullable();
+            $table->string('vic_curso_vencido')->nullable();
         });
     }
 
