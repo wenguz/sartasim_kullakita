@@ -16,11 +16,11 @@ class CreateVictimasTable extends Migration
         Schema::create('victimas', function (Blueprint $table) {
             $table->increments('id_victima');
             $table->string('vic_nombre');
-            $table->string('vic_apellido');
+            $table->string('vic_apellido')->nullable();
             $table->integer('vic_edad')->nullable();
-            $table->datetime('vic_fecha_nacimineto')->nullable();
-            $table->integer('vic_num_hermanos')->nullable();
-            $table->string('vic_procedencia')->nullable();
+            $table->date('vic_fecha_nacimiento')->nullable();
+            $table->integer('vic_num_hermanos')->default('0');
+            $table->string('vic_procedencia');
             $table->string('vic_nacionalidad')->nullable();
             $table->string('vic_direccion')->nullable();
             $table->string('vic_grado_academico')->nullable();

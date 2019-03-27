@@ -43,7 +43,7 @@
                                                   <br>
                                                   <br>
                                                   <div class="form-group"><label class="col-sm-8 control-label">Nombres:</label>
-                                                     <div class="col-sm-10"><input type="text" name="vic_nombre" class="form-control border-bottom">
+                                                     <div class="col-sm-10"><input type="text" name="vic_nombre" class="form-control border-bottom" required="true">
                                                     </div>
                                                   </div>
                                                   <br>
@@ -63,21 +63,21 @@
                                                   <div class="form-group"><label class="col-sm-8 control-label">DNI:</label>
                                                       <div class="col-sm-10 padding-0">
                                                         <input type="radio" name="vic_estado_dni" value="Tiene">Tiene
-                                                        <input type="radio" name="vic_estado_dni" value="no tiene"> No Tiene
+                                                        <input type="radio" name="vic_estado_dni" value="No tiene" checked="true"> No Tiene
                                                       </div>
                                                   </div>
                                                   <br>
                                                   <div class="form-group"><label class="col-sm-8 control-label ">Carnet Identidad:</label>
                                                       <div class="col-sm-10 padding-0">
                                                         <input type="radio" name="vic_estado_ci" value="Tiene">Tiene
-                                                        <input type="radio" name="vic_estado_ci" value="No tiene" > No Tiene
+                                                        <input type="radio" name="vic_estado_ci" value="No tiene" checked="true"> No Tiene
                                                       </div>
                                                   </div>
                                                   <br>
                                                   <br>
                                                   <b class="col-sm-8 control-label">Lugar de nacimiento </b>
                                                   <br>
-                                                
+
                                                   <div class="form-group"><label class="col-sm-8 control-label text-right">Depto. nacimiento:</label>
                                                     <div class="col-sm-10"><input type="text" class="form-control border-bottom" name="vic_departamento" ></div>
                                                   </div>
@@ -100,7 +100,7 @@
                                                   <br>
                                                   <div class="form-group"><label class="col-sm-8 control-label">Procedencia: </label>
                                                     <div class="col-sm-10 padding-0">
-                                                        <input type="radio" name="vic_procedencia" value="Urbano">Urbano
+                                                        <input type="radio" name="vic_procedencia" value="Urbano" checked="true">Urbano
                                                         <input type="radio" name="vic_procedencia" value="Rural">Rural
                                                     </div>
                                                   </div>
@@ -132,15 +132,17 @@
                                                   <div class="form-group"><label class="col-sm-8 control-label">Certificado Nacimiento:</label>
                                                       <div class="col-sm-10 padding-0">
                                                         <input type="radio" name="vic_estado_cn" value="Tiene">Tiene
-                                                        <input type="radio" name="vic_estado_cn" value="No tiene"> No Tiene
+                                                        <input type="radio" name="vic_estado_cn" value="No tiene" checked="true"> No Tiene
                                                       </div>
                                                   </div>
                                                   <br>
+                                                  <div class="form-group"><label class="col-sm-8 control-label">Num. hermanos:</label>
+                                                      <div class="col-sm-10"><input type="text" class="form-control border-bottom" name="vic_num_hermanos" required="true"></div>
+                                                  </div>
                                                   <br>
-                                                  <br>
-                                                  <br>
-                                                  <br>
-                                                  <br>
+                                                  <div class="form-group"><label class="col-sm-8 control-label">Direccion:</label>
+                                                      <div class="col-sm-10"><input type="text" class="form-control border-bottom" name="vic_direccion" ></div>
+                                                  </div>
                                                   <br>
                                                   <br>
                                                   <br>

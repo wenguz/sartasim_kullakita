@@ -1,5 +1,8 @@
 @extends('layouts.app')
 @section('content')
+@if(Session::has('notice'))
+	<div>{{Session::get('notice')}}</div>
+@endif
 <div id="content">
 	<div class="panel">
 		<div class="panel-body">
@@ -24,12 +27,12 @@
 								<div class="col-md-6 col-md-12">
 									<div class="col-sm-12">
 										<!--name como esta en la BD-->
-										<label class="label-search"><b>Ingrese CI de refugiada</b> </label>
+										<label class="label-search"><b>Ingrese # de caso o nombre de adolescente</b> </label>
 									</div>
 									<div class="col-md-9">
 										<div class="col-sm-12">
 											<!--name como esta en la BD-->
-											<input type="text" name="idzones" class="form-control primary" placeholder="Buscar por CI" size="100">
+											<input type="text" name="idzones" class="form-control primary" placeholder="Buscar por numero de caso o nombre" size="100">
 										</div>
 									</div>
 									<div class="col-md-3">
@@ -40,7 +43,7 @@
 						<!--Fin buscador por mes-->
 						</div>
 					</div>
-				<!--Fin buscadores--> 
+				<!--Fin buscadores-->
 					<div class="col-md-12 padding-0">
 						<!--Inicio Tabla-->
 						<br>
@@ -54,7 +57,8 @@
 												<th scope="col">Nombre y Apellido</th>
 												<th scope="col">Edad</th>
 												<th scope="col">Fecha Ingreso</th>
-												<th scope="col">Nacionalidad</th>
+												<th scope="col">CI</th>
+												<th scope="col">Fotografia</th>
 												<th scope="col">Opciones</th>
 											</tr>
 										</thead>
@@ -66,8 +70,8 @@
 												<td>{{$caso->vic_nombre}} {{$caso->vic_apellido}}</td>
 												<td>{{$caso->vic_edad}}</td>
 												<td>{{$caso->fecha_ingreso}}</td>
-												<td scope="row">{{$caso->vic_nacionalidad}}</td>
-
+												<td scope="row">{{$caso->doc_numero}}</td>
+												<td></td>
 												<td  align="center">
 													<div class="fa-hover col-md-3 col-sm-4 text-white" align="right">
 														<a class="btn btn-info mb-3 fa fa-pencil text-white" href="{{action('CasoController@edit',$caso->id_caso)}}"><i align="text-center">Editar</i></a>
