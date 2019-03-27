@@ -16,10 +16,13 @@ use Illuminate\Support\Facades\Redirect;
 
 class CasoController extends Controller
 {
-    public function index(){
-    	$casos=DB::table('victimas')
+    public function index(Request $request){
+//La funcion casov se creo en el modelo vicitma par poder buscar casos por nombre de la vcitima o por numero de caso.
+
+    	$casos=Victima::casov($request->get('caso_victima'))
     ->join('casos','victimas.id_caso_fk','=','casos.id_caso')
-    ->join('tipo_documentos','victimas.id_victima','=','tipo_documentos.id_victima_fk')->where('tipo_documentos.doc_nombre','=','CI')
+    ->join('tipo_documentos','victimas.id_victima','=','tipo_documentos.id_victima_fk')
+    ->where('tipo_documentos.doc_nombre','=','CI')
     ->orderBy('id_caso_fk','ASC')
     ->paginate(2);
     return view('casos.index',compact('casos'));

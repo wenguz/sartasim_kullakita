@@ -22,7 +22,7 @@
 					<div class="col-md-12">
 						<div class="btn-group">
 							<!--Buscador por CI declarado con metodo scopeplate en modelo Usuario-->
-							<form action="" method="get" role="search"
+							<form action="{{ route('casos.index') }}" method="get" role="search"
 								class="form-group">
 								<div class="col-md-6 col-md-12">
 									<div class="col-sm-12">
@@ -32,7 +32,7 @@
 									<div class="col-md-9">
 										<div class="col-sm-12">
 											<!--name como esta en la BD-->
-											<input type="text" name="idzones" class="form-control primary" placeholder="Buscar por numero de caso o nombre" size="100">
+											<input type="text" name="caso_victima" class="form-control primary" placeholder="Buscar por numero de caso o nombre" size="100">
 										</div>
 									</div>
 									<div class="col-md-3">

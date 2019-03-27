@@ -45,4 +45,12 @@ class Victima extends Model
         return $this->hasMany('App\VictimaParentesco');
     }
 
+    public function scopeCasov($query, $caso_victima){
+
+        if(trim($caso_victima != "")){
+            $query -> where (\DB::raw("CONCAT(vic_nombre,'',vic_apellido)"),"like","%$caso_victima%")
+            ->orwhere("id_caso_fk",$caso_victima);
+        }
+    }
+
 }
