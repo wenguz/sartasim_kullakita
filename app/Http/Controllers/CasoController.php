@@ -9,6 +9,7 @@ use App\LugarNacimiento;
 use App\TipoDocumento;
 
 use Carbon\Carbon;
+use Illuminate\Support\Facades\DB;
 
 //Esta librería nos permitirá hacer redireccionamiento de nuestras acciones.
 use Illuminate\Support\Facades\Redirect;
@@ -16,21 +17,24 @@ use Illuminate\Support\Facades\Redirect;
 class CasoController extends Controller
 {
     public function index(){
-    	/*$casos=Caso::all()
-	    ->orderBy('id_caso','ASC')
-	    ->paginate(2);*/
+    	$casos=DB::table('victimas')
+    ->join('casos','victimas.id_caso_fk','=','casos.id_caso')
+    ->orderBy('id_caso_fk','ASC')
+    ->paginate(2);
     return view('casos.index',compact('casos'));
     }
 
     public function create()
     {
        $caso=new Caso;
+
         $casos=Caso::get()->last();
-        if ($casos == null) {
+   
+        if ($casos === null) {
             $caso->id_caso=1;
         }
         else{
-            $caso->id_caso+=1;
+            $caso->id_caso=$casos->id_caso+1;
         }
         $caso->fecha_ingreso=Carbon::now()->toDateTimeString();
         return View('casos.save',compact('caso'));

@@ -57,7 +57,7 @@
                       <ul class="nav nav-list tree">
                         <li><a href="{{ route('casos.create')  }}"><span class="fa fa fa-file"></span>Aregar Ingreso</a></li>
                         <li><a href="modificar_ingreso_1.html"><span class="fa fa-edit"></span>Modificar Ingreso</a></li>
-                        <li><a href="mostrar_ingreso.html"><span class="fa fa-list-alt"></span>Mostrar Ingreso</a></li>
+                        <li><a href="{{ route('casos.index') }}"><span class="fa fa-list-alt"></span>Mostrar Ingreso</a></li>
                       </ul>
                     </li>
                     <li class="ripple">
