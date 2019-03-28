@@ -36,7 +36,7 @@ Route::post('personas'.'PersonaController');
 Route::resource('casos','CasoController');
 Route::post('casos'.'CasoController');
 
-//muestra el perfil
+//muestra el perfil al registrar un nuevo caso
 Route::get('caso/{id_vic}/profile', 'VictimaController@profile')->name('caso.profile');
-//edita el perfil
+//edita el perfil al registrar unj nuevo caso
 Route::put('caso/{id_vic}/profile', 'VictimaController@update_profile')->name('caso.profile.update');
