@@ -71,8 +71,11 @@
 												<td>{{$caso->vic_edad}}</td>
 												<td>{{$caso->fecha_ingreso}}</td>
 												<td scope="row">{{$caso->doc_numero}}</td>
-												<td></td>
+												<td><img width="40px" height="40px" src="{{ asset('uploads/avatars/'.$caso->avatar) }}"></td>
 												<td  align="center">
+													<div class="fa-hover col-md-3 col-sm-4 text-white" align="right">
+														<a class="btn btn-info mb-3 fa fa-user text-white" href="{{action('VictimaController@profile',$caso->id_victima)}}"><i align="text-center">Foto</i></a>
+													</div>
 													<div class="fa-hover col-md-3 col-sm-4 text-white" align="right">
 														<a class="btn btn-info mb-3 fa fa-pencil text-white" href="{{action('CasoController@edit',$caso->id_caso)}}"><i align="text-center">Editar</i></a>
 													</div>

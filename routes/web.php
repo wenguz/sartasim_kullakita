@@ -35,3 +35,8 @@ Route::post('personas'.'PersonaController');
 //
 Route::resource('casos','CasoController');
 Route::post('casos'.'CasoController');
+
+//muestra el perfil
+Route::get('caso/{id_vic}/profile', 'VictimaController@profile')->name('caso.profile');
+//edita el perfil
+Route::put('caso/{id_vic}/profile', 'VictimaController@update_profile')->name('caso.profile.update');

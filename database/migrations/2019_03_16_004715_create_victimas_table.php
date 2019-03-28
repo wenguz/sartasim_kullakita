@@ -25,6 +25,7 @@ class CreateVictimasTable extends Migration
             $table->string('vic_direccion')->nullable();
             $table->string('vic_grado_academico')->nullable();
             $table->string('vic_curso_vencido')->nullable();
+             $table->string('avatar')->default("default_avatar.gif");
         });
     }
 
