@@ -167,6 +167,8 @@
                                     <!--Fin seccion 1-->
 
                                     <!--Inicio seccion 2-->
+
+                                    <!--revisar: https://www.eduardocollado.com/2016/11/17/formularios-html-con-campos-dinamicos-en-javascript/-->
                                     <!--Fin seccion 2-->
                                  </div>
                                 <div class="col-md-12">
