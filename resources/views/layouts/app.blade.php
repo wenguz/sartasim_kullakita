@@ -278,6 +278,8 @@
 
         // end: Maps==============
         // <!--INICIO para el formulario de pasos-->
+        //https://programacion.net/articulo/como_crear_un_formulario_de_multiples_pasos_utilizando_jquery-_bootstrap_y_php_1871?fbclid=IwAR3muv3H8fCzQAf9nJpxOUUyoW8lMAicrd1TAhVtvyiSFjh1BpuWxbkJVXU
+        //para mejorar el script revisar: http://www.elwebmaster.com/general/como-dividir-un-formulario-extenso-en-varios-pasos-usando-jquery?fbclid=IwAR2E9GnFps6_So681y3FQkbW-lhifD7pbDCHdOhGxqiMfIwWFvVvmWIIMZ4
          $(document).ready(function(){
             var form_count = 1, previous_form, next_form, total_forms;
             total_forms = $("fieldset").length;
