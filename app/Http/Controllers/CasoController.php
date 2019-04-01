@@ -44,6 +44,8 @@ class CasoController extends Controller
 
     public function store(Request $request)
     {
+
+       if (isset($_POST['submit'])) {
         if ($request['vic_fecha_nacimiento'] != null) {
                 $nacimiento=Carbon::createFromFormat( 'Y-m-d',$request['vic_fecha_nacimiento']);
             }
@@ -145,7 +147,7 @@ class CasoController extends Controller
 
         }
         if ($request['vic_doc_idn'] != null) {
-            $tdcn=TipoDocumento::create([
+            $tdco=TipoDocumento::create([
             'doc_nombre'=>$request['vic_doc_idn'],
             'doc_estado'=>'Tiene',
             'doc_expira'=>null,
@@ -170,9 +172,14 @@ class CasoController extends Controller
         $tdci->save();
         $tdcn->save();
         $tdco->save();
-
         //Redirigir a la lista de casos
         return Redirect::to('casos')->with('notice', 'Caso guardado correctamente.');
+    } else {
+        echo "Error in registering...Please try again later!";
+        }
+
+
+
     }
 
     public function show($id)

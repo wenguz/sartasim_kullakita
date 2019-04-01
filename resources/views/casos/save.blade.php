@@ -26,11 +26,21 @@
                           </div>
                           <!--Fin Botones encabezado-->
                     <div class="col-md-12 panel-body" style="padding-bottom:15px;">
+                      <!--Inicio barra de progreso-->
+                          <div class="progress">
+                            <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+                          </div>
+                          <div class="alert alert-success hide"></div>
+                      <!--Fin barra de progreso-->
+
+
                         <!--Inicio Formulario Registro usuario-->
-                            <form method="POST" action="{{ route('casos.store') }}" aria-label="{{ __('Register') }}">
+                            <form method="POST" action="{{ route('casos.store') }}" aria-label="{{ __('Register') }}" id="register_form">
                                 @csrf
+
                                 <div class="col-md-12">
                                     <!--Inicio seccion 1-->
+                                    <fieldset>
                                       <div class="media" style="border-style:outset; padding:5px; font-size: 14px;">
                                         <a class="media-heading">1.- Datos Personales </a>
                                         <div class="media-body box-shadow" style="padding:5px;">
@@ -43,7 +53,7 @@
                                                   <br>
                                                   <br>
                                                   <div class="form-group"><label class="col-sm-8 control-label">Nombres:</label>
-                                                     <div class="col-sm-10"><input type="text" name="vic_nombre" class="form-control border-bottom" required="true">
+                                                     <div class="col-sm-10"><input type="text" name="vic_nombre" id="vic_nombre" class="form-control border-bottom" required="true">
                                                     </div>
                                                   </div>
                                                   <br>
@@ -137,7 +147,7 @@
                                                   </div>
                                                   <br>
                                                   <div class="form-group"><label class="col-sm-8 control-label">Num. hermanos:</label>
-                                                      <div class="col-sm-10"><input type="text" class="form-control border-bottom" name="vic_num_hermanos" required="true"></div>
+                                                      <div class="col-sm-10"><input type="text" class="form-control border-bottom" name="vic_num_hermanos" id="vic_num_hermanos" required="true"></div>
                                                   </div>
                                                   <br>
                                                   <div class="form-group"><label class="col-sm-8 control-label">Direccion:</label>
@@ -164,20 +174,36 @@
                                             <!--Fin fila derecha formulario-->
                                         </div>
                                       </div>
+                                      <input type="button" class="next-form btn btn-info" value="Next" />
+                                      <div class="col-md-12">
+                                          <center>
+                                          <button type="submit" name="submit" class="btn btn-primary">
+                                                  {{ __('Registrar') }}
+                                          </button>
+                                          </center>
+                                      </div>
+                                    </fieldset>
                                     <!--Fin seccion 1-->
 
-                                    <!--Inicio seccion 2-->
-
-                                    <!--revisar: https://www.eduardocollado.com/2016/11/17/formularios-html-con-campos-dinamicos-en-javascript/-->
-                                    <!--Fin seccion 2-->
+                                    <!--Inicio seccion 2
+                                    <fieldset>
+                                        revisar: https://www.eduardocollado.com/2016/11/17/formularios-html-con-campos-dinamicos-en-javascript/
+                                      <input type="button" name="previous" class="previous-form btn btn-default" value="Previous" />
+                                      <input type="button" name="next" class="next-form btn btn-info" value="Next" />
+                                    </fieldset>
+                                    Fin seccion 2-->
+                                    <!--
+                                    <fieldset>
+                                      <div class="col-md-12">
+                                          <center>
+                                          <button type="submit" name="submit" class="btn btn-primary">
+                                                  {{ __('Registrar') }}
+                                          </button>
+                                          </center>
+                                      </div>
+                                    </fieldset>
+                                  -->
                                  </div>
-                                <div class="col-md-12">
-                                    <center>
-                                    <button type="submit" class="btn btn-primary">
-                                            {{ __('Registrar') }}
-                                    </button>
-                                    </center>
-                                </div>
                             </form>
                         <!---Fin formulario Registro usurio-->
                     </div>
@@ -187,3 +213,4 @@
     </div>
 </div>
 @endsection
+
