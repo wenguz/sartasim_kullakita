@@ -6486,8 +6486,3 @@ ul li a:focus {
   }
 
 }
-
-/*Inicio para formulario por pasos*/
-  #register_form fieldset:not(:first-of-type) {
-    display: none;
-  }

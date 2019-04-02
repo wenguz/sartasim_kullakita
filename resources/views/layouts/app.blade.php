@@ -23,6 +23,12 @@
 
   <link rel="shortcut icon" href="{{asset('img/logomi.png')}}">
 
+<!--Fromulario dinamico-->
+    <style type="text/css">
+    #register_form fieldset:not(:first-of-type) {
+    display: none;
+    }
+    </style>
 
 
 </head>

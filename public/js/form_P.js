@@ -1,5 +1,6 @@
- <!--INICIO para el formulario de pasos
-   https://programacion.net/articulo/como_crear_un_formulario_de_multiples_pasos_utilizando_jquery-_bootstrap_y_php_1871?fbclid=IwAR3muv3H8fCzQAf9nJpxOUUyoW8lMAicrd1TAhVtvyiSFjh1BpuWxbkJVXU-->
+/*INICIO para el formulario de pasos
+   https://programacion.net/articulo/como_crear_un_formulario_de_multiples_pasos_utilizando_jquery-_bootstrap_y_php_1871?fbclid=IwAR3muv3H8fCzQAf9nJpxOUUyoW8lMAicrd1TAhVtvyiSFjh1BpuWxbkJVXU
+   */
 
          $(document).ready(function(){
             var form_count = 1, previous_form, next_form, total_forms;
@@ -49,4 +50,3 @@
             });
 */
             });
-<!--FIN PASOS PARA FORMULARIO-->

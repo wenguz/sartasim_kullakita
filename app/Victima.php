@@ -44,7 +44,7 @@ class Victima extends Model
     public function victima_parentescos (){
         return $this->hasMany('App\VictimaParentesco');
     }
-
+//para el buscador de caso segun nombre de victima o numero de caso
     public function scopeCasov($query, $caso_victima){
 
         if(trim($caso_victima != "")){
