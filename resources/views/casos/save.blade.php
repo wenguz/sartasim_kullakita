@@ -198,39 +198,41 @@
                         <!--Inicio fila izquierda formulario-->
                           <div class="col-md-4">
                             <div class="form-group"><label class="col-sm-6 control-label text-right">Defensoria de la Niñez y Adolescencia que interna:</label>
-                              <div class="col-sm-6"><input type="text" class="form-control border-bottom"></div>
+                    <!--Tabla instituciones-->
+                              <div class="col-sm-6"><input type="text" class="form-control border-bottom" name="ins_nombre_interna" ></div>
                             </div>
                             <br>
                             <div class="form-group"><label class="col-sm-6 control-label text-right">Institucion responsable de caso:</label>
-                              <div class="col-sm-6"><input type="text" class="form-control border-bottom"></div>
+                              <div class="col-sm-6"><input type="text" class="form-control border-bottom" name="ins_nombre_responsble"></div>
                             </div>
                             <div class="form-group"><label class="col-sm-6 control-label text-right">Telefono: </label>
-                              <div class="col-sm-6"><input type="text" class="form-control border-bottom"></div>
+                              <div class="col-sm-6"><input type="text" class="form-control border-bottom" name="ins_telefono_responsable" ></div>
                             </div>
 
                             <div class="form-group"><label class="col-sm-12 control-labelt"><b>Modalidad de Ingreso</b></label></div>
-
+                      <!--documentos caso -- docc_estado.-->
                             <div class="form-group"><label class="col-sm-6 control-label"><li>Orden Judicial:</li></label>
                               <div class="col-sm-6 padding-0">
-                                <input type="radio" name="option">Tiene
-                                <input type="radio" name="option"> No Tiene
+                                <input type="radio" name="docc_estado_oj" value="Tiene">Tiene
+                                <input type="radio" name="docc_estado_oj" value="No tiene" checked="true"> No Tiene
                               </div>
                             </div>
 
                             <div class="form-group"><label class="col-sm-6 control-label"><li>Req. Fiscal:</li></label>
                               <div class="col-sm-6 padding-0">
-                                <input type="radio" name="option">Tiene
-                                <input type="radio" name="option"> No Tiene
+                                <!--documentos caso -- docc_estado.-->
+                                <input type="radio" name="docc_estado_rf" value="Tiene">Tiene
+                                <input type="radio"name="docc_estado_oj" value="No tiene" checked="true"> No Tiene
                               </div>
                             </div>
                             <div class="form-group"><label class="col-sm-6 control-label text-right">Defensoria de la Niñez y Adolescencia atiende el caso:</label>
-                              <div class="col-sm-6"><input type="text" class="form-control border-bottom"></div>
+                              <div class="col-sm-6"><input type="text" class="form-control border-bottom" name="ins_nombre_atiende" ></div>
                             </div>
                             <br>
                             <div class="form-group"><label class="col-sm-6 control-label"><li>Ingreso por transferencia:</li></label>
                               <div class="col-sm-6 padding-0">
-                                <input type="radio" name="option">Si
-                                <input type="radio" name="option"> No
+                                <input type="radio" name="transferencia" value="Si">Si
+                                <input type="radio" name="transferencia" value="No" checked="true"> No
                               </div>
                             </div>
                           </div>
@@ -239,21 +241,25 @@
                           <div class="col-md-4">
                             <div class="form-group"><label class="col-sm-6 control-label text-right">Municipio: </label>
                               <div class="col-sm-6 padding-0">
-                                <input type="radio" name="option">Urbano
-                                <input type="radio" name="option">Rural
+                      <!--para la institucion que interna-->
+                                <input type="radio" name="ins_mun_u_int" value="Urbano" checked="true">Urbano
+                                <input type="radio" name="ins_mun_r_int" value="Rural">Rural
                               </div>
                             </div>
                             <br>
+                <!--personas: nombre y apellido lo demas nul. en respponsables:cargo:responsable-->
                             <div class="form-group"><label class="col-sm-6 control-label text-right">Nombre responsable de caso:</label>
-                              <div class="col-sm-6"><input type="text" class="form-control border-bottom"></div>
+                              <div class="col-sm-6"><input type="text" class="form-control border-bottom" name="resp_nombre" ></div>
                             </div>
+                <!--instituciones: ins _celular-->
                             <div class="form-group"><label class="col-sm-6 control-label text-right">Celular: </label>
-                              <div class="col-sm-6"><input type="text" class="form-control border-bottom"></div>
+                              <div class="col-sm-6"><input type="text" class="form-control border-bottom" name="ins_celular_responsable"></div>
                             </div>
                             <br>
                             <br>
+                  <!--documnetos caso: docc_num-->
                             <div class="form-group"><label class="col-sm-6 control-label text-right">Num. resolucion: </label>
-                              <div class="col-sm-6"><input type="text" class="form-control border-bottom"></div>
+                              <div class="col-sm-6"><input type="text" class="form-control border-bottom" name="docc_num_oj"></div>
                             </div>
                             <div class="form-group"><label class="col-sm-6 control-label text-right">Coordinacion: </label>
                               <div class="col-sm-6 padding-0">
@@ -261,14 +267,16 @@
                                 <input type="radio" name="option">No
                               </div>
                             </div>
+                    <!--para la institucion que atiende el caso-->
                             <div class="form-group"><label class="col-sm-6 control-label text-right">Municipio: </label>
                               <div class="col-sm-6 padding-0">
-                                <input type="radio" name="option">Urbano
-                                <input type="radio" name="option">Rural
+                                <input type="radio" name="ins_mun_u_at" value="Urbano" checked="true">Urbano
+                                <input type="radio"  name="ins_mun_r_at" value="Rural">Rural
                               </div>
                             </div>
+                      <!--instituciones: . insitucion_caso: transfiere-->
                             <div class="form-group"><label class="col-sm-6 control-label text-right">Nombre de Hogar de transferencia: </label>
-                              <div class="col-sm-6"><input type="text" class="form-control border-bottom">
+                              <div class="col-sm-6"><input type="text" class="form-control border-bottom" name="ins_nombre_transfeerencia">
                               </div>
                             </div>
                           </div>
@@ -276,29 +284,31 @@
                         <!--Inicio fila derecha formulario-->
                           <div class="col-md-4">
                             <div class="form-group"><label class="col-sm-6 control-label text-right">Municipio: </label>
-                              <div class="col-sm-6"><input type="text" class="form-control border-bottom"></div>
+                              <div class="col-sm-6"><input type="text" class="form-control border-bottom" name="ins_municipio_int"></div>
                             </div>
                             <br>
+                 <!--personas: nombre y apellido lo demas nul. en respponsables:cargo:responsable-->
                             <div class="form-group"><label class="col-sm-6 control-label text-right">Apellido responsable de caso:</label>
-                              <div class="col-sm-6"><input type="text" class="form-control border-bottom"></div>
+                              <div class="col-sm-6"><input type="text" class="form-control border-bottom" name="resp_apellido"></div>
                             </div>
                             <br>
                             <br>
                             <br>
                             <br>
+                      <!--instituciones: . insitucion_caso: ingreso-->
                             <div class="form-group"><label class="col-sm-6 control-label text-right">Juzgado Publico de la Niñez:</label>
-                              <div class="col-sm-6"><input type="text" class="form-control border-bottom" ></div>
+                              <div class="col-sm-6"><input type="text" class="form-control border-bottom" name="ins_nombre_juzgado"></div>
                             </div>
                             <br>
                             <br>
                             <div class="form-group"><label class="col-sm-6 control-label text-right">Municipio: </label>
-                              <div class="col-sm-6"><input type="text" class="form-control border-bottom"></div>
+                              <div class="col-sm-6"><input type="text" class="form-control border-bottom" name="ins_municipio_at"></div>
                             </div>
                           </div>
                         <!--Fin fila derecha formulario-->
-
+                          <!--institucion_casos:observacion, accion:transfiere-->
                         <div class="form-group"><label class="col-sm-12 control-label">Nombres anteriores hogares de permanencia: </label>
-                          <div class="col-sm-12"><textarea type="text" class="form-control"></textarea>
+                          <div class="col-sm-12"><textarea type="text" class="form-control" name="ins_c_ob" ></textarea>
                           </div>
                         </div>
                         <br>
@@ -308,32 +318,32 @@
                               <div class="col-md-4">
                                 <div class="col-sm-12 padding-0">
                                   <br>
-                                  <input type="checkbox" name="option">Orden Judicial- Acogimiento
+                                  <input type="checkbox" name="docc_estado_in" value="Orden Judicial - Acogimiento">Orden Judicial - Acogimiento
                                 </div>
                                 <div class="col-sm-12 padding-0">
                                   <br>
-                                  <input type="checkbox" name="option"> Requerimiento Fiscal
+                                  <input type="checkbox" name="docc_estado_in" value="Requerimiento Fiscal"> Requerimiento Fiscal
                                 </div>
                                 <div class="col-sm-12 padding-0">
                                   <br>
-                                  <input type="checkbox" name="option">Ficha Internacion
+                                  <input type="checkbox" name="docc_estado_in" value="Ficha Internacion">Ficha Internacion
                                 </div>
                                 <br>
                               </div>
                               <div class="col-md-4">
                                 <div class="col-sm-12 padding-0">
                                   <br>
-                                  <input type="checkbox" name="option">Informe Social
+                                  <input type="checkbox" name="docc_estado_in" value="Informe Social">Informe Social
                                 </div>
                                   <br>
                                   <div class="col-sm-12 padding-0">
                                     <br>
-                                    <input type="checkbox" name="option">Informe Psicologico
+                                    <input type="checkbox" name="docc_estado_in" value="Informe Psicologico">Informe Psicologico
                                   </div>
                                   <br>
                                   <div class="col-sm-12 padding-0">
                                     <br>
-                                    <input type="checkbox" name="option">Informe Medico
+                                    <input type="checkbox" name="docc_estado_in" value="Informe Medico">Informe Medico
                                   </div>
                                   <br>
                               </div>
@@ -341,19 +351,20 @@
                                 <div class="col-md-4">
                                   <div class="col-sm-12 padding-0">
                                     <br>
-                                    <input type="checkbox" name="option">Informe Pedagogico
+                                    <input type="checkbox" name="docc_estado_in" value="Informe Pedagogico">Informe Pedagogico
                                   </div>
                                   <div class="col-sm-12 padding-0">
                                     <br>
                                     <input type="checkbox" name="option">Otro
-                                    <input type="text" class="form-control border-bottom" placeholder="Especificar">
+                                    <input type="text" class="form-control border-bottom" placeholder="Especificar" name="docc_estado_in" >
                                   </div>
                                 </div>
                             </div>
                           </div>
                         <!--Fin opciones-->
                           <div class="form-group"><label class="col-sm-12 control-label">Observaciones: </label>
-                            <div class="col-sm-12"><textarea type="text" class="form-control"></textarea>
+                            <!--documneto_casos: docc_observacion-->
+                            <div class="col-sm-12"><textarea type="text" class="form-control" name="docc_observacion"></textarea>
                             </div>
                           </div>
                       </div>
@@ -402,32 +413,32 @@
                         <div class="col-md-6">
                           <div class="form-group"><label class="col-sm-4 control-label text-right">Tratamiento Medico: </label>
                             <div class="col-sm-8 padding-0">
-                              <input type="radio" name="option">Si
-                              <input type="radio" name="option">No
+                              <input type="radio" name="trat_medico" value="Si" >Si
+                              <input type="radio" name="trat_medico" value="No" checked="true">No
                             </div>
                           </div>
                           <div class="form-group"><label class="col-sm-4 control-label text-right">Recetas Adjuntas: </label>
                             <div class="col-sm-8 padding-0">
-                              <input type="radio" name="option">Si
-                              <input type="radio" name="option">No
+                              <input type="radio" name="receta_adj" value="Si">Si
+                              <input type="radio" name="receta_adj" value="No" checked="true">No
                             </div>
                           </div>
                         </div>
                         <div class="col-md-6">
                           <div class="form-group"><label class="col-sm-4 control-label text-right">Certificado medico forence: </label>
                             <div class="col-sm-8 padding-0">
-                              <input type="radio" name="option">Si
-                              <input type="radio" name="option">No
+                              <input type="radio" name="certificado_for" value="Si">Si
+                              <input type="radio" name="certificado_for" value="No" checked="true">No
                             </div>
                           </div>
                           <div class="form-group"><label class="col-sm-4 control-label text-right">Otro: </label>
                             <div class="col-sm-8 padding-0">
-                              <input type="text" class="form-control border-bottom" placeholder="Descripcion">
+                              <input type="text" class="form-control border-bottom" placeholder="Descripcion" name="doc_medico">
                             </div>
                           </div>
                         </div>
                         <div class="form-group"><label class="col-sm-12 control-label">Observaciones: </label>
-                          <div class="col-sm-12"><textarea type="text" class="form-control"></textarea>
+                          <div class="col-sm-12"><textarea type="text" class="form-control" name="docc_observacion_medico"></textarea>
                           </div>
                         </div>
                       </div>
@@ -447,32 +458,34 @@
                                                   <div class="col-sm-12">
                                                     <div class="col-md-3">
                                                       <div class="col-sm-12 padding-0">
-                                                        <input type="radio" name="option">Alojamiento
+                                                        <input type="radio" name="ubicacion" value="Alojamiento">Alojamiento
                                                       </div>
                                                       <div class="col-sm-12 padding-0">
-                                                        <input type="radio" name="option"> Via Publica
+                                                        <input type="radio" name="ubicacion" value="Via Publica"> Via Publica
                                                       </div>
                                                     </div>
                                                     <div class="col-md-3">
                                                       <div class="col-sm-12 padding-0">
-                                                        <input type="radio" name="option">Operativo
+                                                        <input type="radio" name="ubicacion" value="Operativo">Operativo
                                                       </div>
                                                       <div class="col-sm-12 padding-0">
-                                                        <input type="radio" name="option">Casa de citas
+                                                        <input type="radio" name="ubicacion" value="Casa de citas">Casa de citas
                                                       </div>
                                                     </div>
                                                     <div class="col-md-3">
                                                       <div class="col-sm-12 padding-0">
-                                                        <input type="radio" name="option">Domicilio Particular
+                                                        <input type="radio" name="ubicacion" value="Domicilio Particular">Domicilio Particular
                                                       </div>
                                                       <div class="col-sm-12 padding-0">
-                                                        <input type="radio" name="option">U. Educativa
+                                                        <input type="radio" name="ubicacion" value="U. Educativa">U. Educativa
                                                       </div>
                                                     </div>
                                                     <div class="col-md-3">
-                                                      <div class="col-sm-12 padding-0">
-                                                        <input type="radio" name="option">Otro lugar
-                                                      </div>
+                                                      <div class="form-group"><label class="col-sm-4 control-label text-right">Otro lugar </label>
+                                                          <div class="col-sm-8 padding-0">
+                                                            <input type="text" class="form-control border-bottom" placeholder="Descripcion" name="ubicacion">
+                                                          </div>
+                                                        </div>
                                                     </div>
                                                   </div>
                                                 </div>
@@ -490,23 +503,23 @@
                                   <div class="col-sm-12">
                                     <div class="col-md-3">
                                       <div class="col-sm-12 padding-0">
-                                        <input type="checkbox" name="option">Bajo Inventario
+                                        <input type="checkbox" name="pertenencia" value="Bajo Inventario">Bajo Inventario
                                       </div>
                                     </div>
                                     <div class="col-md-3">
                                       <div class="col-sm-12 padding-0">
-                                        <input type="checkbox" name="option">Recepcion Objetos de valor
+                                        <input type="checkbox" name="pertenencia" value="Recepcion Objetos de valor">Recepcion Objetos de valor
                                       </div>
                                     </div>
                                     <div class="col-md-3">
                                       <div class="col-sm-12 padding-0">
-                                        <input type="checkbox" name="option">Dinero
+                                        <input type="checkbox" name="pertenencia" value="Dinero">Dinero
                                       </div>
                                     </div>
                                     <div class="col-md-3">
                                       <div class="col-sm-12 padding-0">
                                         <input type="checkbox" name="option">Otras pertenencias
-                                        <input type="text" name="pertenencias" class="form-control border-bottom" placeholder="descripsion">
+                                        <input type="text" name="pertenencia" class="form-control border-bottom" placeholder="descripsion">
                                       </div>
                                     </div>
                                   </div>
@@ -523,17 +536,17 @@
                         <div class="media-body box-shadow" style="padding:8px;">
                           <div class="col-md-6">
                             <div class="form-group"><label class="col-sm-4 control-label text-right">Area Social: </label>
-                              <div class="col-sm-12"><textarea type="text" class="form-control">
+                              <div class="col-sm-12"><textarea type="text" class="form-control" name="docc_obb_social">
                               </textarea>
                               </div>
                             </div>
                             <div class="form-group"><label class="col-sm-4 control-label text-right">Area Salud: </label>
-                              <div class="col-sm-12"><textarea type="text" class="form-control">
+                              <div class="col-sm-12"><textarea type="text" class="form-control"  name="docc_obb_salud">
                               </textarea>
                               </div>
                             </div>
                             <div class="form-group"><label class="col-sm-4 control-label text-right">Area Legal: </label>
-                              <div class="col-sm-12"><textarea type="text" class="form-control">
+                              <div class="col-sm-12"><textarea type="text" class="form-control"  name="docc_obb_legal">
                               </textarea>
                               </div>
                             </div>
@@ -541,12 +554,12 @@
 
                           <div class="col-md-6">
                             <div class="form-group"><label class="col-sm-4 control-label text-right">Area Psicologica: </label>
-                              <div class="col-sm-12"><textarea type="text" class="form-control">
+                              <div class="col-sm-12"><textarea type="text" class="form-control"  name="docc_obb_psicologica">
                               </textarea>
                               </div>
                             </div>
                             <div class="form-group"><label class="col-sm-4 control-label text-right">Area Pedagogica: </label>
-                              <div class="col-sm-12"><textarea type="text" class="form-control">
+                              <div class="col-sm-12"><textarea type="text" class="form-control"  name="docc_obb_pedagogica">
                               </textarea>
                               </div>
                             </div>
@@ -590,18 +603,26 @@
                     <!--Fin seccion 9-->
                  <div class="col-md-6">
                   <div class="form-group" style="padding:5px; font-size: 20px;">
-                    <div class="col-sm-12">
-                      <input type="text" class="form-control border-bottom">
+                    <div class="col-sm-6">
+                      <input type="text" class="form-control border-bottom" name="persona_nombre_res">
                     </div>
-                    <label class="col-sm-12 control-label text-center">Nombre  de la Responsable de Ingreso</label>
+                   <div class="col-sm-6">
+                      <input type="text" class="form-control border-bottom" name="persona_apellido_res">
+                    </div>
+                    <label class="col-sm-6 control-label text-center">Nombre de la Responsable de Ingreso</label>
+                    <label class="col-sm-6 control-label text-center">Apellido de la Responsable de Ingreso</label>
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="form-group" style="padding:5px; font-size: 20px;">
-                    <div class="col-sm-12">
-                      <input type="text" class="form-control border-bottom">
+                    <div class="col-sm-6">
+                      <input type="text" class="form-control border-bottom" name="persona_nombre_der">
                     </div>
-                    <label class="col-sm-12 control-label text-center">Nombre  de la Responsable de Derivacion</label>
+                   <div class="col-sm-6">
+                      <input type="text" class="form-control border-bottom" name="persona_apellido_der">
+                    </div>
+                    <label class="col-sm-6 control-label text-center">Nombre de la Responsable de Derivacion</label>
+                    <label class="col-sm-6 control-label text-center">Apellido de la Responsable de Derivacion</label>
                   </div>
                 </div>
                   <div class="col-md-12">
