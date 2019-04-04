@@ -13,11 +13,12 @@ class CreateParamertricasTable extends Migration
      */
     public function up()
     {
-        Schema::create('paramertricas', function (Blueprint $table) {
+        Schema::create('parametricas', function (Blueprint $table) {
             $table->increments('id_parametrica');
             $table->integer('dominio');
             $table->string('nombre');
-            $table->string('estado');
+            $table->integer('id_padre')->nullable();
+            $table->string('estado')->nullable();
         });
     }
 
@@ -28,6 +29,6 @@ class CreateParamertricasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('paramertricas');
+        Schema::dropIfExists('parametricas');
     }
 }
