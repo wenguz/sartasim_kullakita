@@ -16,15 +16,15 @@ class CreateVictimaParentescosTable extends Migration
         Schema::create('victima_parentescos', function (Blueprint $table) {
             $table->increments('id_victima_parentesco');
             $table->string('parentesco_nombre');
-            $table->string('parentesco_apellido');
-            $table->string('parentesco_telefono');
-            $table->string('parentesco_celular');
-            $table->string('parentesco_domicilio');
-            $table->string('parentesco_estado_civil');
-            $table->string('parentesco_nivel_instruccion');
-            $table->string('parentesco_ocupacion');
-            $table->string('parentesco_descripcion');
-            $table->string('parentesco_observacion');
+            $table->string('parentesco_apellido')->nullable();
+            $table->string('parentesco_telefono')->nullable();
+            $table->string('parentesco_celular')->nullable();
+            $table->string('parentesco_domicilio')->nullable();
+            $table->string('parentesco_estado_civil')->nullable();
+            $table->string('parentesco_nivel_instruccion')->nullable();
+            $table->string('parentesco_ocupacion')->nullable();
+            $table->string('parentesco_descripcion')->nullable();
+            $table->string('parentesco_observacion')->nullable();
             //$table->integer('id_victima_fk');
         });
     }

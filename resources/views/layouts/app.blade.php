@@ -23,12 +23,17 @@
 
   <link rel="shortcut icon" href="{{asset('img/logomi.png')}}">
 
-<!--Fromulario dinamico-->
+<!--Fromulario fildtep-->
     <style type="text/css">
     #register_form fieldset:not(:first-of-type) {
     display: none;
     }
     </style>
+
+<!--Inicio java script para formulario dinamico-->
+      <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
+  <!--Fin java script para formulario dinamico-->
 
 
 </head>
@@ -54,6 +59,9 @@
 
     <!--Para formulario por pasos-->
     <script src="{{asset('js/form_P.js')}}"></script>
+
+    <!--Formulario parentesco-->
+    <script src="{{asset('js/form_dinamico.js')}}"></script>
 
     <!-- plugins -->
     <script src="{{asset('js/plugins/moment.min.js')}}"></script>

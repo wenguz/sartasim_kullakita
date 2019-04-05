@@ -7,6 +7,7 @@ use App\Caso;
 use App\Victima;
 use App\LugarNacimiento;
 use App\TipoDocumento;
+use App\VictimaParentesco;
 
 use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
@@ -65,12 +66,14 @@ class CasoController extends Controller
             'fecha_ingreso'=> Carbon::now()->toDateTimeString(),
             'fecha_egreso'=> null,
         ]);
+        $caso->save();
 
         $lugar=LugarNacimiento::create([
             'pais'=>$request['vic_pais'],
             'departamento'=>$request['vic_departamento'],
             'provincia'=>$request['vic_provincia'],
         ]);
+          $lugar->save();
 
         $vic=Victima::create([
             'vic_nombre'=>$request['vic_nombre'],
@@ -85,6 +88,8 @@ class CasoController extends Controller
             'id_lugarna_fk'=>$lugar->id_lugarna,
 
         ]);
+         $vic->save();
+         $id_v=$vic->id_victima;
 
         if ($request['vic_estado_dni'] == 'Tiene') {
             $tdni=TipoDocumento::create([
@@ -106,6 +111,7 @@ class CasoController extends Controller
             ]);
 
         }
+         $tdni->save();
         if ($request['vic_estado_ci'] == 'Tiene') {
             $tdci=TipoDocumento::create([
             'doc_nombre'=>'CI',
@@ -126,6 +132,7 @@ class CasoController extends Controller
             ]);
 
         }
+        $tdci->save();
         if ($request['vic_estado_cn'] == 'Tiene') {
             $tdcn=TipoDocumento::create([
             'doc_nombre'=>'Certificado Nacimiento',
@@ -146,6 +153,7 @@ class CasoController extends Controller
             ]);
 
         }
+        $tdcn->save();
         if ($request['vic_doc_idn'] != null) {
             $tdco=TipoDocumento::create([
             'doc_nombre'=>$request['vic_doc_idn'],
@@ -165,13 +173,40 @@ class CasoController extends Controller
             'id_victima_fk'=>$vic->id_victima,
             ]);
         }
-        $caso->save();
-        $lugar->save();
-        $vic->save();
-        $tdni->save();
-        $tdci->save();
-        $tdcn->save();
-        $tdco->save();
+         $tdco->save();
+         //https://programacion.net/articulo/anadir_y_eliminar_campos_inputs_dinamicamente_mediante_jquery_1816?fbclid=IwAR3AJo4g3w-llOsfcAleMYwrD9bxvyMjdnZtGCpAMp4rjwztsYqiDFOII-c
+       // https://www.lawebdelprogramador.com/foros/PHP/1368779-ALMACENAR-VARIOS-REGISTROS-EN-ARREGLO.html
+
+         $datos = array();
+        $cantidad = count($request['parentesco_nombre']);
+        $nombre=$request['parentesco_nombre'];
+        $apellido=$request['parentesco_apellido'];
+        $telefono=$request['parentesco_telefono'];
+        $celular=$request['parentesco_celular'];
+        $parientes=$request['pariente'];
+        for ($i=0; $i < $cantidad; $i++)
+        {
+            $datos[$i] = array ("id_victima"=>$id_v,"parentesco_nombre"=>$nombre[$i],"parentesco_apellido"=>$apellido[$i],"parentesco_telefono"=>$telefono[$i],"parentesco_celular"=>$celular[$i],"pariente"=>$parientes[$i]);
+       }
+        foreach($datos as $dato){
+
+             $parentesco=VictimaParentesco::create([
+            'parentesco_nombre'=>$dato["parentesco_nombre"],
+            'parentesco_apellido'=>$dato["parentesco_apellido"],
+            'parentesco_telefono'=>$dato["parentesco_telefono"],
+            'parentesco_celular'=>$dato["parentesco_celular"],
+            'parentesco_domicilio'=>null,
+            'parentesco_estado_civil'=>null,
+            'parentesco_nivel_instruccion'=>null,
+            'parentesco_ocupacion'=>null,
+            'parentesco_descripcion'=>$dato["pariente"],
+            'parentesco_observacion'=>$request['parentesco_observacion'],
+            'id_victima_fk'=>$dato["id_victima"],
+            ]);
+             $parentesco->save();
+
+        }
+
         //Redirigir a la lista de casos
         return Redirect::to('casos')->with('notice', 'Caso guardado correctamente.');
     } else {

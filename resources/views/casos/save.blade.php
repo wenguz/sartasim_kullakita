@@ -175,13 +175,43 @@
                       </div>
                     </div>
                   <!--Fin seccion 1-->
-                  <!--Inicio seccion 2   revisar: https://www.eduardocollado.com/2016/11/17/formularios-html-con-campos-dinamicos-en-javascript/    -->
+                   <!--Inicio seccion 2   revisar: https://www.eduardocollado.com/2016/11/17/formularios-html-con-campos-dinamicos-en-javascript/    -->
                     <div class="media" style="border-style:outset; padding:5px; font-size: 14px;">
                       <a class="media-heading">2.- Antecedentes Familiares </a>
                       <div class="media-body box-shadow" style="padding:5px;">
+
+                        <!--Inicio formulario dinamico parentesco-->
+                        <!--https://programacion.net/articulo/anadir_y_eliminar_campos_inputs_dinamicamente_mediante_jquery_1816?fbclid=IwAR3AJo4g3w-llOsfcAleMYwrD9bxvyMjdnZtGCpAMp4rjwztsYqiDFOII-c-->
+                            <div class="field_wrapper">
+                              <div class="col-md-12">
+                                <label class="control-label text-right">Nombres:</label>
+                                <input type="text" name="parentesco_nombre[]" value=""/>
+
+                                <label class="control-label text-right">Apellidos:</label>
+                                <input type="text" name="parentesco_apellido[]" value=""/>
+
+                                <label class="control-label text-right">Telefono:</label>
+                                <input type="text" name="parentesco_telefono[]" value=""/>
+
+                                <label class="control-label text-right">Celular:</label>
+                                <input type="text" name="parentesco_celular[]" value=""/>
+
+                                <label class="control-label text-right">Parentesco:</label>
+                                <select name="pariente[]">
+                                                <option value="Padres">Padres</option>
+                                                <option value="Hermanos">Hermanos</option>
+                                                <option value="Tios">Tios</option>
+                                                <option value="Abuelos">Abuelos</option>
+                                </select>
+
+                                 <a href="javascript:void(0);" class="add_button fa fa-plus-square" title="Add field"></a>
+                              </div>
+
+                          </div>
+                        <!--Finformulario dinamico parentesco-->
                         <div class="form-group"><label class="col-sm-12 control-label ">Observaciones:</label>
                           <div class="col-sm-12">
-                            <textarea type="text" class="form-control"></textarea>
+                            <textarea type="text" class="form-control" name="parentesco_observacion"></textarea>
                           </div>
                         </div>
                       </div>
@@ -641,4 +671,3 @@
   </div>
 </div>
 @endsection
-
