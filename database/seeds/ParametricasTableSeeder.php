@@ -24,13 +24,13 @@ class ParametricasTableSeeder extends Seeder
         		),
         		array(
         			'dominio'=>1,
-        			'nombre'=>'orden judicial',
+        			'nombre'=>'Orden_Judicial',
         			'id_padre'=>1,
         			'estado'=>'ingreso',
         		),
         		array(
         			'dominio'=>1,
-        			'nombre'=>'requerimiento fiscal',
+        			'nombre'=>'Requerimiento Fiscal',
         			'id_padre'=>1,
         			'estado'=>'ingreso',
         		),

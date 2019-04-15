@@ -12,7 +12,7 @@ class Paramertrica extends Model
      public $timestamps=false;
 
     protected $fillable = [
-         'id_parametrica','dominio', 'nombre','estado',
+         'id_parametrica','dominio', 'nombre','id_padre','estado',
     ];
     ///para la llave que va a documento_casos.Estos son metodos de Eloquent
     public function documento_casos (){

@@ -17,9 +17,9 @@ class CreatePersonasTable extends Migration
             $table->increments('id_persona');
             $table->string('persona_nombre');
             $table->string('persona_apellido');
-            $table->string('persona_ci');
-            $table->string('persona_telefono');
-            $table->string('persona_celular');
+            $table->string('persona_ci')->nullable();
+            $table->string('persona_telefono')->nullable();
+            $table->string('persona_celular')->nullable();
 
             $table->softDeletes();
             $table->timestamps();

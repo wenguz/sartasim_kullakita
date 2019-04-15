@@ -15,10 +15,10 @@ class CreateDocumentoCasosTable extends Migration
     {
         Schema::create('documento_casos', function (Blueprint $table) {
             $table->increments('id_doc_caso');
-            $table->string('docc_num');
-            $table->date('docc_fecha');
-            $table->string('docc_estado');
-            $table->string('docc_observacion');
+            $table->string('docc_num')->nullable();
+            $table->date('docc_fecha')->nullable();
+            $table->string('docc_estado')->nullable();
+            $table->string('docc_observacion')->nullable();
             //$table->('id_caso_fk');
             //$table->('id_parametrica_fk');
         });

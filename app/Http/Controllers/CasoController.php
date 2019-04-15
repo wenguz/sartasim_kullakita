@@ -8,6 +8,12 @@ use App\Victima;
 use App\LugarNacimiento;
 use App\TipoDocumento;
 use App\VictimaParentesco;
+use App\Institucion;
+use App\InstitucionCaso;
+use App\Persona;
+use App\Responsable;
+use App\Paramertrica;
+use App\DocumentoCaso;
 
 use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
@@ -206,6 +212,114 @@ class CasoController extends Controller
              $parentesco->save();
 
         }
+        //defensoria q interna
+            $def_int=Institucion::create([
+                'ins_nombre'=>$request['defensoria_interna_0'].' '.$request['defensoria_interna_1'],
+                'ins_municipio_u'=>$request['defensoria_interna_2'],
+                'ins_municipio_r'=>$request['defensoria_interna_3'],
+            ]);
+            $def_int->save();
+            $id_def_int=$def_int->id_institucion;
+            $ins_caso1=InstitucionCaso::create([
+                'accion'=>'Interna',
+                'obseracion'=>null,
+                'id_caso_fk'=>$caso->id_caso,
+                'id_institucion_fk'=>$id_def_int,
+            ]);
+            $ins_caso1->save();
+        //institucion responsable
+            $ins_resp=Institucion::create([
+                'ins_nombre'=>$request['ins_responsable_0'].' '.$request['ins_responsable_1'],
+                'ins_telefono'=>$request['ins_responsable_2'],
+                'ins_celular'=>$request['ins_responsable_3'],
+            ]);
+            $ins_resp->save();
+            $id_ins_resp=$ins_resp->id_institucion;
+            $ins_caso2=InstitucionCaso::create([
+                'accion'=>'Responsable',
+                'id_caso_fk'=>$caso->id_caso,
+                'id_institucion_fk'=>$id_ins_resp,
+            ]);
+            $ins_caso2->save();
+            //persona responsable
+            $responsable=Persona::create([
+                'persona_nombre'=>$request['persona_responsable_0'],
+                'persona_apellido'=>$request['persona_responsable_1'],
+            ]);
+            $responsable->save();
+            $responsable1=Responsable::create([
+                'cargo'=>'Responsable',
+                'id_persona_fk'=>$responsable->id_persona,
+                'id_ins_caso_fk'=>$ins_caso2->id_ins_caso,
+            ]);
+            $responsable1->save();
+
+            //Modalidad de ingreso 1
+           $id_oj=DB::table('parametricas')->where('nombre', $request['docc_oj_0'])->first();
+
+            $docc_1=DocumentoCaso::create([
+                'docc_estado'=>$request['docc_oj_1'],
+                'docc_fecha'=>Carbon::now()->toDateTimeString(),
+                'docc_num'=>$request['docc_oj_2'],
+                'id_caso_fk'=>$caso->id_caso,
+                'id_parametrica_fk'=>$id_oj->id_parametrica,
+            ]);
+            $docc_1->save();
+            $ins_juzgado=Institucion::create([
+                'ins_nombre'=>$request['ins_juzgado_0'].' '.$request['ins_juzgado_1'],
+            ]);
+            $ins_juzgado->save();
+            $ins_caso3=InstitucionCaso::create([
+                'accion'=>'Ingreso',
+                'id_caso_fk'=>$caso->id_caso,
+                'id_institucion_fk'=>$ins_juzgado->id_institucion,
+            ]);
+            $ins_caso3->save();
+            //modalidaad ingreso 2
+
+            $id_re=DB::table('parametricas')->where('nombre', $request['docc_rf_0'])->first();
+            $docc_2=DocumentoCaso::create([
+                'docc_estado'=>$request['docc_rf_1'],
+                'docc_fecha'=>Carbon::now()->toDateTimeString(),
+                'id_caso_fk'=>$caso->id_caso,
+                'id_parametrica_fk'=>$id_re->id_parametrica,
+            ]);
+            $docc_2->save();
+            $docc_3=DocumentoCaso::create([
+                'docc_estado'=>$request['docc_coordinacion_1'],
+                'docc_fecha'=>Carbon::now()->toDateTimeString(),
+                'id_caso_fk'=>$caso->id_caso,
+                'id_parametrica_fk'=>$id_re->id_parametrica,
+                'docc_observacion'=>$request['docc_coordinacion_0'],
+            ]);
+            $docc_3->save();
+            $def_atiende=Institucion::create([
+                'ins_nombre'=>$request['defensoria_atiende_0'].' '.$request['defensoria_atiende_1'],
+                'ins_municipio_r'=>$request['defensoria_atiende_2'],
+                'ins_municipio_u'=>$request['defensoria_atiende_3'],
+            ]);
+            $def_atiende->save();
+            $def_atiende1=$def_atiende->id_institucion;
+            $ins_caso3=InstitucionCaso::create([
+                'accion'=>'Atiende',
+                'id_caso_fk'=>$caso->id_caso,
+                'id_institucion_fk'=>$def_atiende1,
+            ]);
+            $ins_caso3->save();
+            //modalidad ingreso 3
+            if ($request['transferencia_1']=='Si') {
+                $trans=Institucion::create([
+                'ins_nombre'=>$request['transferencia_0'].' '.$request['transferencia_2'],
+                ]);
+                $trans->save();
+            $ins_caso4=InstitucionCaso::create([
+                'accion'=>'Transfiere',
+                'id_caso_fk'=>$caso->id_caso,
+                'id_institucion_fk'=>$trans->id_institucion,
+                'observacion'=>$request['transferencia_3'],
+            ]);
+            $ins_caso4->save();
+            }
 
         //Redirigir a la lista de casos
         return Redirect::to('casos')->with('notice', 'Caso guardado correctamente.');

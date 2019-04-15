@@ -17,7 +17,7 @@ class AddIdCasoIdParametricaToDocumentoCasosTable extends Migration
             $table->unsignedInteger('id_caso_fk');
             $table->foreign('id_caso_fk')->references('id_caso')->on('casos');
             $table->unsignedInteger('id_parametrica_fk');
-            $table->foreign('id_parametrica_fk')->references('id_parametrica')->on('paramertricas');
+            $table->foreign('id_parametrica_fk')->references('id_parametrica')->on('parametricas');
         });
     }
 

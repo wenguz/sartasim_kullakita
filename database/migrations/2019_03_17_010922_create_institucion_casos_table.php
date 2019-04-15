@@ -15,8 +15,8 @@ class CreateInstitucionCasosTable extends Migration
     {
         Schema::create('institucion_casos', function (Blueprint $table) {
             $table->increments('id_ins_caso');
-            $table->string('acion');
-            $table->string('observacion');
+            $table->string('accion');
+            $table->string('observacion')->nullable();
         });
     }
 
