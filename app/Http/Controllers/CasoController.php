@@ -14,6 +14,7 @@ use App\Persona;
 use App\Responsable;
 use App\Paramertrica;
 use App\DocumentoCaso;
+use App\TextoFicha;
 
 use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
@@ -263,6 +264,7 @@ class CasoController extends Controller
                 'docc_num'=>$request['docc_oj_2'],
                 'id_caso_fk'=>$caso->id_caso,
                 'id_parametrica_fk'=>$id_oj->id_parametrica,
+                'docc_observacion'=>$request['docc_oj_0'],
             ]);
             $docc_1->save();
             $ins_juzgado=Institucion::create([
@@ -283,20 +285,23 @@ class CasoController extends Controller
                 'docc_fecha'=>Carbon::now()->toDateTimeString(),
                 'id_caso_fk'=>$caso->id_caso,
                 'id_parametrica_fk'=>$id_re->id_parametrica,
+                 'docc_observacion'=>$request['docc_rf_0'],
             ]);
             $docc_2->save();
+            $id_co=DB::table('parametricas')->where('nombre', $request['docc_coordinacion_0'])->first();
+
             $docc_3=DocumentoCaso::create([
                 'docc_estado'=>$request['docc_coordinacion_1'],
                 'docc_fecha'=>Carbon::now()->toDateTimeString(),
                 'id_caso_fk'=>$caso->id_caso,
-                'id_parametrica_fk'=>$id_re->id_parametrica,
+                'id_parametrica_fk'=>$id_co->id_parametrica,
                 'docc_observacion'=>$request['docc_coordinacion_0'],
             ]);
             $docc_3->save();
             $def_atiende=Institucion::create([
                 'ins_nombre'=>$request['defensoria_atiende_0'].' '.$request['defensoria_atiende_1'],
-                'ins_municipio_r'=>$request['defensoria_atiende_2'],
-                'ins_municipio_u'=>$request['defensoria_atiende_3'],
+                'ins_municipio_r'=>$request['defensoria_atiende_3'],
+                'ins_municipio_u'=>$request['defensoria_atiende_2'],
             ]);
             $def_atiende->save();
             $def_atiende1=$def_atiende->id_institucion;
@@ -320,6 +325,33 @@ class CasoController extends Controller
             ]);
             $ins_caso4->save();
             }
+
+             $arr_doc= array();
+             $docs=$request['docc_estado_in'];
+
+             for ($i=0; $i < 8; $i++){
+                $id_doc=DB::table('parametricas')->where('nombre', $docs[$i])->first();
+
+                if ($id_doc!=null) {
+
+                 $arr_doc[$i] = array ("id_caso_fk"=>$caso->id_caso,"docc_fecha"=>Carbon::now()->toDateTimeString(),"docc_estado"=>'Tiene',"id_parametrica_fk"=>$id_doc->id_parametrica,"docc_observacion"=>$request['docc_observacion']);
+                }
+                else{
+                     $id_doc=DB::table('parametricas')->where('nombre', 'Otros_Documentos')->first();
+                    $arr_doc[$i] = array ("id_caso_fk"=>$caso->id_caso,"docc_fecha"=>Carbon::now()->toDateTimeString(),"docc_estado"=>'Tiene',"id_parametrica_fk"=>$id_doc->id_parametrica,"docc_observacion"=>$request['docc_observacion']);
+                }
+             }
+             foreach ($arr_doc as $ar_doc) {
+                 $doc_caso=DocumentoCaso::create([
+            'id_caso_fk'=>$ar_doc["id_caso_fk"],
+            'docc_fecha'=>$ar_doc["docc_fecha"],
+            'docc_estado'=>$ar_doc["docc_estado"],
+            'id_parametrica_fk'=>$ar_doc["id_parametrica_fk"],
+            'docc_observacion'=>$ar_doc["docc_observacion"],
+
+            ]);
+             $doc_caso->save();
+             }
 
         //Redirigir a la lista de casos
         return Redirect::to('casos')->with('notice', 'Caso guardado correctamente.');

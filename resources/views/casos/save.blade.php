@@ -247,7 +247,7 @@
                           <div class="form-group"><label class="col-sm-6 control-label"><li>Req. Fiscal:</li></label>
                             <div class="col-sm-6 padding-0">
                               <!--documentos caso -- docc_estado.-->
-                              <input type="text"name="docc_rf_0" value="Requerimiento Fiscal" hidden="true">
+                              <input type="text"name="docc_rf_0" value="Requerimiento_Fiscal" hidden="true">
                               <input type="radio" name="docc_rf_1" value="Tiene">Tiene
                               <input type="radio"name="docc_rf_1" value="No tiene" checked="true"> No Tiene
                             </div>
@@ -277,7 +277,7 @@
                         <br>
                         <!--personas: nombre y apellido lo demas nul. en respponsables:cargo:responsable-->
                         <div class="form-group"><label class="col-sm-6 control-label text-right">Nombre responsable de caso:</label>
-                          <div class="col-sm-6"><input type="text" class="form-control border-bottom" name="persona_responsable_0" ></div>
+                          <div class="col-sm-6"><input type="text" class="form-control border-bottom" name="persona_responsable_0" required="true" ></div>
                         </div>
                         <!--instituciones: ins _celular-->
                         <div class="form-group"><label class="col-sm-6 control-label text-right">Celular: </label>
@@ -318,7 +318,7 @@
                         <br>
                         <!--personas: nombre y apellido lo demas nul. en respponsables:cargo:responsable-->
                         <div class="form-group"><label class="col-sm-6 control-label text-right">Apellido responsable de caso:</label>
-                          <div class="col-sm-6"><input type="text" class="form-control border-bottom" name="persona_responsable_1"></div>
+                          <div class="col-sm-6"><input type="text" class="form-control border-bottom" name="persona_responsable_1" required="true"></div>
                         </div>
                         <br>
                         <br>
@@ -347,32 +347,32 @@
                           <div class="col-md-4">
                             <div class="col-sm-12 padding-0">
                               <br>
-                              <input type="checkbox" name="docc_estado_in[0]" value="Orden Judicial - Acogimiento">Orden Judicial - Acogimiento
+                              <input type="checkbox" name="docc_estado_in[0]" value="Orden_Judicial">Orden Judicial - Acogimiento
                             </div>
                             <div class="col-sm-12 padding-0">
                               <br>
-                              <input type="checkbox" name="docc_estado_in[1]" value="Requerimiento Fiscal"> Requerimiento Fiscal
+                              <input type="checkbox" name="docc_estado_in[1]" value="Requerimiento_Fiscal"> Requerimiento Fiscal
                             </div>
                             <div class="col-sm-12 padding-0">
                               <br>
-                              <input type="checkbox" name="docc_estado_in[2]" value="Ficha Internacion">Ficha Internacion
+                              <input type="checkbox" name="docc_estado_in[2]" value="Ficha_Internacion">Ficha Internacion
                             </div>
                             <br>
                           </div>
                           <div class="col-md-4">
                             <div class="col-sm-12 padding-0">
                               <br>
-                              <input type="checkbox" name="docc_estado_in[3]" value="Informe Social">Informe Social
+                              <input type="checkbox" name="docc_estado_in[3]" value="Informe_Social">Informe Social
                             </div>
                             <br>
                             <div class="col-sm-12 padding-0">
                               <br>
-                              <input type="checkbox" name="docc_estado_in[4]" value="Informe Psicologico">Informe Psicologico
+                              <input type="checkbox" name="docc_estado_in[4]" value="Informe_Psicologico">Informe Psicologico
                             </div>
                             <br>
                             <div class="col-sm-12 padding-0">
                               <br>
-                              <input type="checkbox" name="docc_estado_in[5]" value="Informe Medico">Informe Medico
+                              <input type="checkbox" name="docc_estado_in[5]" value="Informe_Medico">Informe Medico
                             </div>
                             <br>
                           </div>
@@ -380,7 +380,7 @@
                           <div class="col-md-4">
                             <div class="col-sm-12 padding-0">
                               <br>
-                              <input type="checkbox" name="docc_estado_in[6]" value="Informe Pedagogico">Informe Pedagogico
+                              <input type="checkbox" name="docc_estado_in[6]" value="Informe_Pedagogico">Informe Pedagogico
                             </div>
                             <div class="col-sm-12 padding-0">
                               <br>

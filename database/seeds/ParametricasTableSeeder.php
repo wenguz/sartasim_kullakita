@@ -30,46 +30,52 @@ class ParametricasTableSeeder extends Seeder
         		),
         		array(
         			'dominio'=>1,
-        			'nombre'=>'Requerimiento Fiscal',
+        			'nombre'=>'Requerimiento_Fiscal',
         			'id_padre'=>1,
         			'estado'=>'ingreso',
         		),
         		array(
         			'dominio'=>1,
-        			'nombre'=>'ficha internacion',
+        			'nombre'=>'Ficha_Internacion',
         			'id_padre'=>1,
         			'estado'=>'ingreso',
         		),
         		array(
         			'dominio'=>1,
-        			'nombre'=>'informe social',
+        			'nombre'=>'Informe_Social',
         			'id_padre'=>1,
         			'estado'=>'ingreso',
         		),
         		array(
         			'dominio'=>1,
-        			'nombre'=>'informe psicologico',
+        			'nombre'=>'Informe_Psicologico',
         			'id_padre'=>1,
         			'estado'=>'ingreso',
         		),
         		array(
         			'dominio'=>1,
-        			'nombre'=>'informe medico ingreso',
+        			'nombre'=>'Informe_Medico',
         			'id_padre'=>1,
         			'estado'=>'ingreso',
         		),
         		array(
         			'dominio'=>1,
-        			'nombre'=>'informe pedagogico',
+        			'nombre'=>'Informe_Pedagogico',
         			'id_padre'=>1,
         			'estado'=>'ingreso',
         		),
         		array(
         			'dominio'=>1,
-        			'nombre'=>'otros documentos',
+        			'nombre'=>'Otros_Documentos',
         			'id_padre'=>1,
         			'estado'=>'ingreso',
         		),
+                array(
+                    'dominio'=>1,
+                    'nombre'=>'Coordinacion',
+                    'id_padre'=>1,
+                    'estado'=>'ingreso',
+                ),
         	));
     }
 }
