@@ -412,21 +412,21 @@
                       <div class="col-sm-12">
                         <div class="col-md-4">
                           <div class="col-sm-12 padding-0">
-                            <input type="checkbox" name="option">Violencia Sexual Comercial
+                            <input type="checkbox" name="problematica[0]">Violencia Sexual Comercial
                           </div>
                           <div class="col-sm-12 padding-0">
-                            <input type="checkbox" name="option">Trata con fines de explotacion sexual comercial
-                          </div>
-                        </div>
-                        <div class="col-md-4">
-                          <div class="col-sm-12 padding-0">
-                            <input type="checkbox" name="option">Trata con fines de explotacion Laboral
+                            <input type="checkbox" name="problematica[1]">Trata con fines de explotacion sexual comercial
                           </div>
                         </div>
                         <div class="col-md-4">
                           <div class="col-sm-12 padding-0">
-                            <input type="checkbox" name="option">Violencia Sexual
-                            <input type="text" class="form-control border-bottom" placeholder="descripcion">
+                            <input type="checkbox" name="problematica[2]">Trata con fines de explotacion Laboral
+                          </div>
+                        </div>
+                        <div class="col-md-4">
+                          <div class="col-sm-12 padding-0">
+                            <input type="checkbox" name="option" name="problematica[3]">Violencia Sexual
+                            <input type="text" class="form-control border-bottom" placeholder="Descripcion" name="problematica[4]">
                           </div>
                         </div>
                       </div>
