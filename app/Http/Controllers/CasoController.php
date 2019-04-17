@@ -256,61 +256,64 @@ class CasoController extends Controller
             $responsable1->save();
 
             //Modalidad de ingreso 1
-           $id_oj=DB::table('parametricas')->where('nombre', $request['docc_oj_0'])->first();
+            if($request['docc_oj_1']=='Tiene'){
+               $id_oj=DB::table('parametricas')->where('nombre', $request['docc_oj_0'])->first();
 
-            $docc_1=DocumentoCaso::create([
-                'docc_estado'=>$request['docc_oj_1'],
-                'docc_fecha'=>Carbon::now()->toDateTimeString(),
-                'docc_num'=>$request['docc_oj_2'],
-                'id_caso_fk'=>$caso->id_caso,
-                'id_parametrica_fk'=>$id_oj->id_parametrica,
-                'docc_observacion'=>$request['docc_oj_0'],
-            ]);
-            $docc_1->save();
-            $ins_juzgado=Institucion::create([
-                'ins_nombre'=>$request['ins_juzgado_0'].' '.$request['ins_juzgado_1'],
-            ]);
-            $ins_juzgado->save();
-            $ins_caso3=InstitucionCaso::create([
-                'accion'=>'Ingreso',
-                'id_caso_fk'=>$caso->id_caso,
-                'id_institucion_fk'=>$ins_juzgado->id_institucion,
-            ]);
-            $ins_caso3->save();
+                $docc_1=DocumentoCaso::create([
+                    'docc_estado'=>$request['docc_oj_1'],
+                    'docc_fecha'=>Carbon::now()->toDateTimeString(),
+                    'docc_num'=>$request['docc_oj_2'],
+                    'id_caso_fk'=>$caso->id_caso,
+                    'id_parametrica_fk'=>$id_oj->id_parametrica,
+                    'docc_observacion'=>$request['docc_oj_0'],
+                ]);
+                $docc_1->save();
+                $ins_juzgado=Institucion::create([
+                    'ins_nombre'=>$request['ins_juzgado_0'].' '.$request['ins_juzgado_1'],
+                ]);
+                $ins_juzgado->save();
+                $ins_caso3=InstitucionCaso::create([
+                    'accion'=>'Ingreso',
+                    'id_caso_fk'=>$caso->id_caso,
+                    'id_institucion_fk'=>$ins_juzgado->id_institucion,
+                ]);
+                $ins_caso3->save();
+            }
             //modalidaad ingreso 2
+            if($request['docc_rf_1']=='Tiene'){
+                $id_re=DB::table('parametricas')->where('nombre', $request['docc_rf_0'])->first();
+                $docc_2=DocumentoCaso::create([
+                    'docc_estado'=>$request['docc_rf_1'],
+                    'docc_fecha'=>Carbon::now()->toDateTimeString(),
+                    'id_caso_fk'=>$caso->id_caso,
+                    'id_parametrica_fk'=>$id_re->id_parametrica,
+                     'docc_observacion'=>$request['docc_rf_0'],
+                ]);
+                $docc_2->save();
+                $id_co=DB::table('parametricas')->where('nombre', $request['docc_coordinacion_0'])->first();
 
-            $id_re=DB::table('parametricas')->where('nombre', $request['docc_rf_0'])->first();
-            $docc_2=DocumentoCaso::create([
-                'docc_estado'=>$request['docc_rf_1'],
-                'docc_fecha'=>Carbon::now()->toDateTimeString(),
-                'id_caso_fk'=>$caso->id_caso,
-                'id_parametrica_fk'=>$id_re->id_parametrica,
-                 'docc_observacion'=>$request['docc_rf_0'],
-            ]);
-            $docc_2->save();
-            $id_co=DB::table('parametricas')->where('nombre', $request['docc_coordinacion_0'])->first();
-
-            $docc_3=DocumentoCaso::create([
-                'docc_estado'=>$request['docc_coordinacion_1'],
-                'docc_fecha'=>Carbon::now()->toDateTimeString(),
-                'id_caso_fk'=>$caso->id_caso,
-                'id_parametrica_fk'=>$id_co->id_parametrica,
-                'docc_observacion'=>$request['docc_coordinacion_0'],
-            ]);
-            $docc_3->save();
-            $def_atiende=Institucion::create([
-                'ins_nombre'=>$request['defensoria_atiende_0'].' '.$request['defensoria_atiende_1'],
-                'ins_municipio_r'=>$request['defensoria_atiende_3'],
-                'ins_municipio_u'=>$request['defensoria_atiende_2'],
-            ]);
-            $def_atiende->save();
-            $def_atiende1=$def_atiende->id_institucion;
-            $ins_caso3=InstitucionCaso::create([
-                'accion'=>'Atiende',
-                'id_caso_fk'=>$caso->id_caso,
-                'id_institucion_fk'=>$def_atiende1,
-            ]);
-            $ins_caso3->save();
+                $docc_3=DocumentoCaso::create([
+                    'docc_estado'=>$request['docc_coordinacion_1'],
+                    'docc_fecha'=>Carbon::now()->toDateTimeString(),
+                    'id_caso_fk'=>$caso->id_caso,
+                    'id_parametrica_fk'=>$id_co->id_parametrica,
+                    'docc_observacion'=>$request['docc_coordinacion_0'],
+                ]);
+                $docc_3->save();
+                $def_atiende=Institucion::create([
+                    'ins_nombre'=>$request['defensoria_atiende_0'].' '.$request['defensoria_atiende_1'],
+                    'ins_municipio_r'=>$request['defensoria_atiende_3'],
+                    'ins_municipio_u'=>$request['defensoria_atiende_2'],
+                ]);
+                $def_atiende->save();
+                $def_atiende1=$def_atiende->id_institucion;
+                $ins_caso3=InstitucionCaso::create([
+                    'accion'=>'Atiende',
+                    'id_caso_fk'=>$caso->id_caso,
+                    'id_institucion_fk'=>$def_atiende1,
+                ]);
+                $ins_caso3->save();
+            }
             //modalidad ingreso 3
             if ($request['transferencia_1']=='Si') {
                 $trans=Institucion::create([
@@ -326,32 +329,67 @@ class CasoController extends Controller
             $ins_caso4->save();
             }
 
+            //Documnetos presentados al ingresar
              $arr_doc= array();
-             $docs=$request['docc_estado_in'];
-
-             for ($i=0; $i < 8; $i++){
-                $id_doc=DB::table('parametricas')->where('nombre', $docs[$i])->first();
-
-                if ($id_doc!=null) {
-
-                 $arr_doc[$i] = array ("id_caso_fk"=>$caso->id_caso,"docc_fecha"=>Carbon::now()->toDateTimeString(),"docc_estado"=>'Tiene',"id_parametrica_fk"=>$id_doc->id_parametrica,"docc_observacion"=>$request['docc_observacion']);
+             $doc=$request['docc_estado_in'];
+             foreach ($doc as $i => $docs) {
+                $id_doc=DB::table('parametricas')->where('nombre', $docs)->where('dominio',1)->first();
+                if ($id_doc!=null && $docs!='Otros_Documentos') {
+                    $arr_doc[$i] = array ("id_caso_fk"=>$caso->id_caso,
+                       "docc_fecha"=>Carbon::now()->toDateTimeString(),
+                        "docc_estado"=>'Tiene',
+                        "id_parametrica_fk"=>$id_doc->id_parametrica,
+                        "docc_observacion"=>$request['docc_observacion']);
                 }
-                else{
-                     $id_doc=DB::table('parametricas')->where('nombre', 'Otros_Documentos')->first();
-                    $arr_doc[$i] = array ("id_caso_fk"=>$caso->id_caso,"docc_fecha"=>Carbon::now()->toDateTimeString(),"docc_estado"=>'Tiene',"id_parametrica_fk"=>$id_doc->id_parametrica,"docc_observacion"=>$request['docc_observacion']);
+                elseif($docs!=null){
+                    $id_doc=DB::table('parametricas')->where('nombre', 'Otros_Documentos')->where('dominio',1)->first();
+                        $arr_doc[$i] = array ("id_caso_fk"=>$caso->id_caso,
+                            "docc_fecha"=>Carbon::now()->toDateTimeString(),
+                            "docc_estado"=>'Tiene',
+                            "id_parametrica_fk"=>$id_doc->id_parametrica,
+                            "docc_observacion"=>$docs);
                 }
              }
-             foreach ($arr_doc as $ar_doc) {
-                 $doc_caso=DocumentoCaso::create([
-            'id_caso_fk'=>$ar_doc["id_caso_fk"],
-            'docc_fecha'=>$ar_doc["docc_fecha"],
-            'docc_estado'=>$ar_doc["docc_estado"],
-            'id_parametrica_fk'=>$ar_doc["id_parametrica_fk"],
-            'docc_observacion'=>$ar_doc["docc_observacion"],
+                 foreach ($arr_doc as $ar_doc) {
+                     $doc_caso=DocumentoCaso::create([
+                'id_caso_fk'=>$ar_doc["id_caso_fk"],
+                'docc_fecha'=>$ar_doc["docc_fecha"],
+                'docc_estado'=>$ar_doc["docc_estado"],
+                'id_parametrica_fk'=>$ar_doc["id_parametrica_fk"],
+                'docc_observacion'=>$ar_doc["docc_observacion"],
+
+                ]);
+                 $doc_caso->save();
+                 }
+
+             /*
+             //Problematicas de ingreso
+             $problematica= array();
+             $prob=$request['problematica'];
+             for ($i=0; $i < 4; $i++){
+                $id_prob=DB::table('parametricas')->where('nombre', $prob[$i])->first();
+                if ($id_prob!=null) {
+
+                 $problematica[$i] = array ("id_caso_fk"=>$caso->id_caso,"docc_fecha"=>Carbon::now()->toDateTimeString(),"docc_estado"=>'Tiene',"id_parametrica_fk"=>$id_prob->id_parametrica,"docc_observacion"=>$prob[$i]);
+                }
+               else{
+                    $id_prob=DB::table('parametricas')->where('nombre', 'Violencia_Sexual')->first();
+                    $problematica[$i] = array ("id_caso_fk"=>$caso->id_caso,"docc_fecha"=>Carbon::now()->toDateTimeString(),"docc_estado"=>'Tiene',"id_parametrica_fk"=>$id_prob->id_parametrica,"docc_observacion"=>$prob[$i]);
+                }
+
+             }
+             foreach ($problematica as $ar_prob) {
+                 $doc_prob=DocumentoCaso::create([
+            'id_caso_fk'=>$ar_prob["id_caso_fk"],
+            'docc_fecha'=>$ar_prob["docc_fecha"],
+            'docc_estado'=>$ar_prob["docc_estado"],
+            'id_parametrica_fk'=>$ar_prob["id_parametrica_fk"],
+            'docc_observacion'=>$ar_prob["docc_observacion"],
 
             ]);
-             $doc_caso->save();
+             $doc_prob->save();
              }
+             */
 
         //Redirigir a la lista de casos
         return Redirect::to('casos')->with('notice', 'Caso guardado correctamente.');

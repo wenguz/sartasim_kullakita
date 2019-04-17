@@ -48,12 +48,12 @@
                           </div>
                           <br>
                           <br>
-                          <div class="form-group"><label class="col-sm-8 control-label">Nombres:</label>
+                          <div class="form-group"><label class="col-sm-8 control-label">Nombres: *</label>
                             <div class="col-sm-10"><input type="text" name="vic_nombre" id="vic_nombre" class="form-control border-bottom" required="true">
                             </div>
                           </div>
                           <br>
-                          <div class="form-group"><label class="col-sm-8 control-label">Apellidos:</label>
+                          <div class="form-group"><label class="col-sm-8 control-label">Apellidos: *</label>
                             <div class="col-sm-10"><input type="text" name="vic_apellido" class="form-control border-bottom">
                             </div>
                           </div>
@@ -142,7 +142,7 @@
                             </div>
                           </div>
                           <br>
-                          <div class="form-group"><label class="col-sm-8 control-label">Num. hermanos:</label>
+                          <div class="form-group"><label class="col-sm-8 control-label">Num. hermanos: *</label>
                             <div class="col-sm-10"><input type="text" class="form-control border-bottom" name="vic_num_hermanos" id="vic_num_hermanos" required="true"></div>
                           </div>
                           <br>
@@ -180,10 +180,10 @@
                         <!--https://programacion.net/articulo/anadir_y_eliminar_campos_inputs_dinamicamente_mediante_jquery_1816?fbclid=IwAR3AJo4g3w-llOsfcAleMYwrD9bxvyMjdnZtGCpAMp4rjwztsYqiDFOII-c-->
                         <div class="field_wrapper">
                           <div class="col-md-12">
-                            <label class="control-label text-right">Nombres:</label>
-                            <input type="text" name="parentesco_nombre[]" value=""/>
+                            <label class="control-label text-right">Nombres: *</label>
+                            <input type="text" name="parentesco_nombre[]" value="" required="true" />
 
-                            <label class="control-label text-right">Apellidos:</label>
+                            <label class="control-label text-right">Apellidos: *</label>
                             <input type="text" name="parentesco_apellido[]" value=""/>
 
                             <label class="control-label text-right">Telefono:</label>
@@ -222,13 +222,13 @@
                         <div class="media-body box-shadow" style="padding:8px;">
                         <!--Inicio fila izquierda formulario-->
                         <div class="col-md-4">
-                            <div class="form-group"><label class="col-sm-6 control-label text-right">Defensoria de la Niñez y Adolescencia que interna:</label>
+                            <div class="form-group"><label class="col-sm-6 control-label text-right">Defensoria de la Niñez y Adolescencia que interna: *</label>
                               <!--Tabla instituciones-->
-                              <div class="col-sm-6"><input type="text" name="defensoria_interna_0" value="Defensoria Niñez y Adolescencia que interna" hidden="true"><input type="text" class="form-control border-bottom" name="defensoria_interna_1" ></div>
+                              <div class="col-sm-6"><input type="text" name="defensoria_interna_0" value="Defensoria Niñez y Adolescencia que interna" hidden="true"><input type="text" class="form-control border-bottom" name="defensoria_interna_1" required="true"></div>
                             </div>
                         <br>
-                          <div class="form-group"><label class="col-sm-6 control-label text-right">Institucion responsable de caso:</label>
-                            <div class="col-sm-6"><input type="text"name="ins_responsable_0" value="Institucion responsable de caso" hidden="true"><input type="text" class="form-control border-bottom" name="ins_responsable_1"></div>
+                          <div class="form-group"><label class="col-sm-6 control-label text-right">Institucion responsable de caso: *</label>
+                            <div class="col-sm-6"><input type="text"name="ins_responsable_0" value="Institucion responsable de caso" hidden="true"><input type="text" class="form-control border-bottom" name="ins_responsable_1" required="true"></div>
                           </div>
                           <div class="form-group"><label class="col-sm-6 control-label text-right">Telefono: </label>
                             <div class="col-sm-6"><input type="text" class="form-control border-bottom" name="ins_responsable_2"></div>
@@ -276,7 +276,7 @@
                         </div>
                         <br>
                         <!--personas: nombre y apellido lo demas nul. en respponsables:cargo:responsable-->
-                        <div class="form-group"><label class="col-sm-6 control-label text-right">Nombre responsable de caso:</label>
+                        <div class="form-group"><label class="col-sm-6 control-label text-right">Nombre responsable de caso: *</label>
                           <div class="col-sm-6"><input type="text" class="form-control border-bottom" name="persona_responsable_0" required="true" ></div>
                         </div>
                         <!--instituciones: ins _celular-->
@@ -317,7 +317,7 @@
                         </div>
                         <br>
                         <!--personas: nombre y apellido lo demas nul. en respponsables:cargo:responsable-->
-                        <div class="form-group"><label class="col-sm-6 control-label text-right">Apellido responsable de caso:</label>
+                        <div class="form-group"><label class="col-sm-6 control-label text-right">Apellido responsable de caso: *</label>
                           <div class="col-sm-6"><input type="text" class="form-control border-bottom" name="persona_responsable_1" required="true"></div>
                         </div>
                         <br>
@@ -384,8 +384,8 @@
                             </div>
                             <div class="col-sm-12 padding-0">
                               <br>
-                              <input type="checkbox" name="option">Otro
-                              <input type="text" class="form-control border-bottom" placeholder="Especificar" name="docc_estado_in[7]" >
+                              <input type="checkbox" name="docc_estado_in[7]" value="Otros_Documentos">Otro
+                              <input type="text" class="form-control border-bottom" placeholder="Especificar" name="docc_estado_in[8]">
                             </div>
                           </div>
                         </div>
@@ -412,21 +412,21 @@
                       <div class="col-sm-12">
                         <div class="col-md-4">
                           <div class="col-sm-12 padding-0">
-                            <input type="checkbox" name="problematica[0]">Violencia Sexual Comercial
+                            <input type="checkbox" name="problematica[0]" value="Violencia_Sexual_Comercial">Violencia Sexual Comercial
                           </div>
                           <div class="col-sm-12 padding-0">
-                            <input type="checkbox" name="problematica[1]">Trata con fines de explotacion sexual comercial
-                          </div>
-                        </div>
-                        <div class="col-md-4">
-                          <div class="col-sm-12 padding-0">
-                            <input type="checkbox" name="problematica[2]">Trata con fines de explotacion Laboral
+                            <input type="checkbox" name="problematica[1]" value="Trata_ConFines_Explotacion_Sexual_Comercial">Trata con fines de explotacion sexual comercial
                           </div>
                         </div>
                         <div class="col-md-4">
                           <div class="col-sm-12 padding-0">
-                            <input type="checkbox" name="option" name="problematica[3]">Violencia Sexual
-                            <input type="text" class="form-control border-bottom" placeholder="Descripcion" name="problematica[4]">
+                            <input type="checkbox" name="problematica[2]" value="Trata_ConFines_Explotacion_Laboral">Trata con fines de explotacion Laboral
+                          </div>
+                        </div>
+                        <div class="col-md-4">
+                          <div class="col-sm-12 padding-0">
+                            <input type="checkbox" >Violencia Sexual
+                            <input type="text" class="form-control border-bottom" placeholder="Descripcion" name="problematica[3]">
                           </div>
                         </div>
                       </div>
@@ -435,128 +435,128 @@
                   </div>
                   <!--Fin seccion 4-->
                   <!--Inicio seccion 5-->
-                  <div class="media" style="border-style:outset; padding:5px; font-size: 14px;">
-                    <a class="media-heading">5.- Antecedentes de Salud de ingreso </a>
-                    <div class="media-body box-shadow" style="padding:8px;">
-                      <p>Verificacion de informes medicos evacuados</p>
-                      <div class="col-md-6">
-                        <div class="form-group"><label class="col-sm-4 control-label text-right">Tratamiento Medico: </label>
-                          <div class="col-sm-8 padding-0">
-                            <input type="radio" name="trat_medico" value="Si" >Si
-                            <input type="radio" name="trat_medico" value="No" checked="true">No
+                    <div class="media" style="border-style:outset; padding:5px; font-size: 14px;">
+                      <a class="media-heading">5.- Antecedentes de Salud de ingreso </a>
+                      <div class="media-body box-shadow" style="padding:8px;">
+                        <p>Verificacion de informes medicos evacuados</p>
+                        <div class="col-md-6">
+                          <div class="form-group"><label class="col-sm-4 control-label text-right">Tratamiento Medico: </label>
+                            <div class="col-sm-8 padding-0">
+                              <input type="radio" name="trat_medico" value="Si" >Si
+                              <input type="radio" name="trat_medico" value="No" checked="true">No
+                            </div>
+                          </div>
+                          <div class="form-group"><label class="col-sm-4 control-label text-right">Recetas Adjuntas: </label>
+                            <div class="col-sm-8 padding-0">
+                              <input type="radio" name="receta_adj" value="Si">Si
+                              <input type="radio" name="receta_adj" value="No" checked="true">No
+                            </div>
                           </div>
                         </div>
-                        <div class="form-group"><label class="col-sm-4 control-label text-right">Recetas Adjuntas: </label>
-                          <div class="col-sm-8 padding-0">
-                            <input type="radio" name="receta_adj" value="Si">Si
-                            <input type="radio" name="receta_adj" value="No" checked="true">No
+                        <div class="col-md-6">
+                          <div class="form-group"><label class="col-sm-4 control-label text-right">Certificado medico forence: </label>
+                            <div class="col-sm-8 padding-0">
+                              <input type="radio" name="certificado_for" value="Si">Si
+                              <input type="radio" name="certificado_for" value="No" checked="true">No
+                            </div>
+                          </div>
+                          <div class="form-group"><label class="col-sm-4 control-label text-right">Otro: </label>
+                            <div class="col-sm-8 padding-0">
+                              <input type="text" class="form-control border-bottom" placeholder="Descripcion" name="doc_medico">
+                            </div>
                           </div>
                         </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="form-group"><label class="col-sm-4 control-label text-right">Certificado medico forence: </label>
-                          <div class="col-sm-8 padding-0">
-                            <input type="radio" name="certificado_for" value="Si">Si
-                            <input type="radio" name="certificado_for" value="No" checked="true">No
+                        <div class="form-group"><label class="col-sm-12 control-label">Observaciones: </label>
+                          <div class="col-sm-12"><textarea type="text" class="form-control" name="docc_observacion_medico"></textarea>
                           </div>
-                        </div>
-                        <div class="form-group"><label class="col-sm-4 control-label text-right">Otro: </label>
-                          <div class="col-sm-8 padding-0">
-                            <input type="text" class="form-control border-bottom" placeholder="Descripcion" name="doc_medico">
-                          </div>
-                        </div>
-                      </div>
-                      <div class="form-group"><label class="col-sm-12 control-label">Observaciones: </label>
-                        <div class="col-sm-12"><textarea type="text" class="form-control" name="docc_observacion_medico"></textarea>
                         </div>
                       </div>
                     </div>
-                  </div>
                   <!--Fin seccion 5-->
                   <input type="button" name="previous" class="previous-form btn btn-default" value="Previous" />
                   <input type="button" name="next" class="next-form btn btn-info" value="Next" />
                 </fieldset>
                 <fieldset>
                   <!--Inicio seccion 6-->
-                  <div class="media" style="border-style:outset; padding:5px; font-size: 14px;">
-                    <a class="media-heading">6.- Antecedentes de Lugar de ubicacion </a>
-                    <div class="media-body box-shadow" style="padding:8px;">
-                      <p>Lugar en el que se encontro a la adolescente</p>
-                      <!--Inicio opciones-->
-                      <div class="form-group"><label class="col-sm-12 control-labelt">Lugar</label>
-                        <div class="col-sm-12">
-                          <div class="col-md-3">
-                            <div class="col-sm-12 padding-0">
-                              <input type="radio" name="ubicacion" value="Alojamiento">Alojamiento
+                    <div class="media" style="border-style:outset; padding:5px; font-size: 14px;">
+                      <a class="media-heading">6.- Antecedentes de Lugar de ubicacion </a>
+                      <div class="media-body box-shadow" style="padding:8px;">
+                        <p>Lugar en el que se encontro a la adolescente</p>
+                        <!--Inicio opciones-->
+                        <div class="form-group"><label class="col-sm-12 control-labelt">Lugar</label>
+                          <div class="col-sm-12">
+                            <div class="col-md-3">
+                              <div class="col-sm-12 padding-0">
+                                <input type="radio" name="ubicacion" value="Alojamiento">Alojamiento
+                              </div>
+                              <div class="col-sm-12 padding-0">
+                                <input type="radio" name="ubicacion" value="Via Publica"> Via Publica
+                              </div>
                             </div>
-                            <div class="col-sm-12 padding-0">
-                              <input type="radio" name="ubicacion" value="Via Publica"> Via Publica
+                            <div class="col-md-3">
+                              <div class="col-sm-12 padding-0">
+                                <input type="radio" name="ubicacion" value="Operativo">Operativo
+                              </div>
+                              <div class="col-sm-12 padding-0">
+                                <input type="radio" name="ubicacion" value="Casa de citas">Casa de citas
+                              </div>
                             </div>
-                          </div>
-                          <div class="col-md-3">
-                            <div class="col-sm-12 padding-0">
-                              <input type="radio" name="ubicacion" value="Operativo">Operativo
+                            <div class="col-md-3">
+                              <div class="col-sm-12 padding-0">
+                                <input type="radio" name="ubicacion" value="Domicilio Particular">Domicilio Particular
+                              </div>
+                              <div class="col-sm-12 padding-0">
+                                <input type="radio" name="ubicacion" value="U. Educativa">U. Educativa
+                              </div>
                             </div>
-                            <div class="col-sm-12 padding-0">
-                              <input type="radio" name="ubicacion" value="Casa de citas">Casa de citas
-                            </div>
-                          </div>
-                          <div class="col-md-3">
-                            <div class="col-sm-12 padding-0">
-                              <input type="radio" name="ubicacion" value="Domicilio Particular">Domicilio Particular
-                            </div>
-                            <div class="col-sm-12 padding-0">
-                              <input type="radio" name="ubicacion" value="U. Educativa">U. Educativa
-                            </div>
-                          </div>
-                          <div class="col-md-3">
-                            <div class="form-group"><label class="col-sm-4 control-label text-right">Otro lugar </label>
-                              <div class="col-sm-8 padding-0">
-                                <input type="text" class="form-control border-bottom" placeholder="Descripcion" name="ubicacion">
+                            <div class="col-md-3">
+                              <div class="form-group"><label class="col-sm-4 control-label text-right">Otro lugar </label>
+                                <div class="col-sm-8 padding-0">
+                                  <input type="text" class="form-control border-bottom" placeholder="Descripcion" name="ubicacion">
+                                </div>
                               </div>
                             </div>
                           </div>
                         </div>
+                        <!--Fin opciones-->
                       </div>
-                      <!--Fin opciones-->
                     </div>
-                  </div>
                   <!--Fin seccion 6-->
 
                   <!--Inicio seccion 7-->
-                  <div class="media" style="border-style:outset; padding:5px; font-size: 14px;">
-                    <a class="media-heading">7.- Recepcion de Pertenecias</a>
-                    <div class="media-body box-shadow" style="padding:8px;">
-                      <!--Inicio opciones-->
-                      <div class="form-group"><label class="col-sm-12 control-labelt">Pertenecias</label>
-                        <div class="col-sm-12">
-                          <div class="col-md-3">
-                            <div class="col-sm-12 padding-0">
-                              <input type="checkbox" name="pertenencia" value="Bajo Inventario">Bajo Inventario
+                    <div class="media" style="border-style:outset; padding:5px; font-size: 14px;">
+                      <a class="media-heading">7.- Recepcion de Pertenecias</a>
+                      <div class="media-body box-shadow" style="padding:8px;">
+                        <!--Inicio opciones-->
+                        <div class="form-group"><label class="col-sm-12 control-labelt">Pertenecias</label>
+                          <div class="col-sm-12">
+                            <div class="col-md-3">
+                              <div class="col-sm-12 padding-0">
+                                <input type="checkbox" name="pertenencia" value="Bajo Inventario">Bajo Inventario
+                              </div>
                             </div>
-                          </div>
-                          <div class="col-md-3">
-                            <div class="col-sm-12 padding-0">
-                              <input type="checkbox" name="pertenencia" value="Recepcion Objetos de valor">Recepcion Objetos de valor
+                            <div class="col-md-3">
+                              <div class="col-sm-12 padding-0">
+                                <input type="checkbox" name="pertenencia" value="Recepcion Objetos de valor">Recepcion Objetos de valor
+                              </div>
                             </div>
-                          </div>
-                          <div class="col-md-3">
-                            <div class="col-sm-12 padding-0">
-                              <input type="checkbox" name="pertenencia" value="Dinero">Dinero
+                            <div class="col-md-3">
+                              <div class="col-sm-12 padding-0">
+                                <input type="checkbox" name="pertenencia" value="Dinero">Dinero
+                              </div>
                             </div>
-                          </div>
-                          <div class="col-md-3">
-                            <div class="col-sm-12 padding-0">
-                              <input type="checkbox" name="option">Otras pertenencias
-                              <input type="text" name="pertenencia" class="form-control border-bottom" placeholder="descripsion">
+                            <div class="col-md-3">
+                              <div class="col-sm-12 padding-0">
+                                <input type="checkbox" name="option">Otras pertenencias
+                                <input type="text" name="pertenencia" class="form-control border-bottom" placeholder="descripsion">
+                              </div>
                             </div>
                           </div>
                         </div>
-                      </div>
-                      <!--Fin opciones-->
+                        <!--Fin opciones-->
 
+                      </div>
                     </div>
-                  </div>
                   <!--Fin seccion 7-->
 
                   <!--Inicio seccion 8-->
@@ -607,29 +607,29 @@
 
       <fieldset>
         <!--Inicio seccion 9-->
-        <div class="media" style="border-style:outset; padding:5px; font-size: 14px;">
-          <a class="media-heading">9.- Programacion de acciones conjuntas con la institucion</a>
-          <div class="media-body box-shadow" style="padding:8px;">
-            <div class="col-md-6">
-              <div class="form-group"><label class="col-sm-4 control-label text-right">Fecha: </label>
-                <div class="col-sm-12"><textarea type="text" class="form-control">
-                </textarea>
+          <div class="media" style="border-style:outset; padding:5px; font-size: 14px;">
+              <a class="media-heading">9.- Programacion de acciones conjuntas con la institucion</a>
+              <div class="media-body box-shadow" style="padding:8px;">
+                <div class="col-md-6">
+                  <div class="form-group"><label class="col-sm-4 control-label text-right">Fecha: </label>
+                    <div class="col-sm-12"><textarea type="text" class="form-control">
+                    </textarea>
+                  </div>
+                </div>
+
               </div>
-            </div>
 
+              <div class="col-md-6">
+                <div class="form-group"><label class="col-sm-4 control-label text-right">Acciones: </label>
+                  <div class="col-sm-12"><textarea type="text" class="form-control">
+                  </textarea>
+                </div>
+              </div>
           </div>
 
-          <div class="col-md-6">
-            <div class="form-group"><label class="col-sm-4 control-label text-right">Acciones: </label>
-              <div class="col-sm-12"><textarea type="text" class="form-control">
-              </textarea>
-            </div>
           </div>
-        </div>
-
-      </div>
-    </div>
-    <!--Fin seccion 9-->
+          </div>
+        <!--Fin seccion 9-->
     <div class="col-md-6">
       <div class="form-group" style="padding:5px; font-size: 20px;">
         <div class="col-sm-6">
@@ -659,6 +659,7 @@
         <button type="submit" name="submit" class="btn btn-primary">{{ __('Registrar') }}</button>
       </center>
     </div>
+     <input type="button" name="previous" class="previous-form btn btn-default" value="Previous" />
   </fieldset>
 </div>
 </form>
