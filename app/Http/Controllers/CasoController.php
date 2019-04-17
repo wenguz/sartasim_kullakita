@@ -362,34 +362,40 @@ class CasoController extends Controller
                  $doc_caso->save();
                  }
 
-             /*
+
              //Problematicas de ingreso
-             $problematica= array();
-             $prob=$request['problematica'];
-             for ($i=0; $i < 4; $i++){
-                $id_prob=DB::table('parametricas')->where('nombre', $prob[$i])->first();
-                if ($id_prob!=null) {
-
-                 $problematica[$i] = array ("id_caso_fk"=>$caso->id_caso,"docc_fecha"=>Carbon::now()->toDateTimeString(),"docc_estado"=>'Tiene',"id_parametrica_fk"=>$id_prob->id_parametrica,"docc_observacion"=>$prob[$i]);
+             $arr_probl= array();
+             $problematicas=$request['problematica'];
+             foreach ($problematicas as $i => $problematica) {
+                $id_doc=DB::table('parametricas')->where('nombre', $problematica)->where('dominio',2)->first();
+                if ($id_doc!=null && $problematica!='Violencia_Sexual') {
+                    $arr_probl[$i] = array ("id_caso_fk"=>$caso->id_caso,
+                       "docc_fecha"=>Carbon::now()->toDateTimeString(),
+                        "docc_estado"=>'Tiene',
+                        "id_parametrica_fk"=>$id_doc->id_parametrica,
+                        "docc_observacion"=> $problematica);
                 }
-               else{
-                    $id_prob=DB::table('parametricas')->where('nombre', 'Violencia_Sexual')->first();
-                    $problematica[$i] = array ("id_caso_fk"=>$caso->id_caso,"docc_fecha"=>Carbon::now()->toDateTimeString(),"docc_estado"=>'Tiene',"id_parametrica_fk"=>$id_prob->id_parametrica,"docc_observacion"=>$prob[$i]);
+                elseif($docs!=null){
+                    $id_doc=DB::table('parametricas')->where('nombre', 'Violencia_Sexual')->where('dominio',2)->first();
+                        $arr_probl[$i] = array ("id_caso_fk"=>$caso->id_caso,
+                            "docc_fecha"=>Carbon::now()->toDateTimeString(),
+                            "docc_estado"=>'Tiene',
+                            "id_parametrica_fk"=>$id_doc->id_parametrica,
+                            "docc_observacion"=>$problematica);
                 }
-
              }
-             foreach ($problematica as $ar_prob) {
-                 $doc_prob=DocumentoCaso::create([
-            'id_caso_fk'=>$ar_prob["id_caso_fk"],
-            'docc_fecha'=>$ar_prob["docc_fecha"],
-            'docc_estado'=>$ar_prob["docc_estado"],
-            'id_parametrica_fk'=>$ar_prob["id_parametrica_fk"],
-            'docc_observacion'=>$ar_prob["docc_observacion"],
+                 foreach ($arr_probl as $ar_p) {
+                     $prob=DocumentoCaso::create([
+                'id_caso_fk'=>$ar_p["id_caso_fk"],
+                'docc_fecha'=>$ar_p["docc_fecha"],
+                'docc_estado'=>$ar_p["docc_estado"],
+                'id_parametrica_fk'=>$ar_p["id_parametrica_fk"],
+                'docc_observacion'=>$ar_p["docc_observacion"],
 
-            ]);
-             $doc_prob->save();
-             }
-             */
+                ]);
+                 $prob->save();
+                 }
+
 
         //Redirigir a la lista de casos
         return Redirect::to('casos')->with('notice', 'Caso guardado correctamente.');

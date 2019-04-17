@@ -150,7 +150,7 @@ class ParametricasTableSeeder extends Seeder
                 ),
                 array(
                     'dominio'=>2,
-                    'nombre'=>'Violencia_Sexuall',
+                    'nombre'=>'Violencia_Sexual',
                     'id_padre'=>19,
                     'estado'=>'ingreso',
                 ),

@@ -425,8 +425,8 @@
                         </div>
                         <div class="col-md-4">
                           <div class="col-sm-12 padding-0">
-                            <input type="checkbox" >Violencia Sexual
-                            <input type="text" class="form-control border-bottom" placeholder="Descripcion" name="problematica[3]">
+                            <input type="checkbox" name="problematica[3]" value="Violencia_Sexual">Violencia Sexual
+                            <input type="text" class="form-control border-bottom" placeholder="Descripcion" name="problematica[4]">
                           </div>
                         </div>
                       </div>
