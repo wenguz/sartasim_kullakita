@@ -428,6 +428,23 @@ class CasoController extends Controller
                 ]);
                   $doc_salud_in->save();
                  }
+            //Antecedentes de Lugar
+                  $id_lugar=DB::table('parametricas')->where('nombre', $request['ubicacion'])->where('dominio',3)->first();
+                   if ($request['ubicacion']=='Otro_Lugar') {
+                         $d_ob=$request['otra_ubicacion'];
+                    }
+                    else{
+                        $d_ob=$request['ubicacion'];
+                    }
+                  $lugar=DocumentoCaso::create([
+                    'id_caso_fk'=>$caso->id_caso,
+                    'docc_fecha'=>Carbon::now()->toDateTimeString(),
+                    'docc_estado'=>'Tiene',
+                    'id_parametrica_fk'=>$id_lugar->id_parametrica,
+                   'docc_observacion'=>$d_ob,
+                    ]);
+                  $lugar->save();
+
 
 
         //Redirigir a la lista de casos

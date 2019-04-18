@@ -494,7 +494,7 @@
                                 <input type="radio" name="ubicacion" value="Alojamiento">Alojamiento
                               </div>
                               <div class="col-sm-12 padding-0">
-                                <input type="radio" name="ubicacion" value="Via Publica"> Via Publica
+                                <input type="radio" name="ubicacion" value="Via_Publica"> Via Publica
                               </div>
                             </div>
                             <div class="col-md-3">
@@ -502,22 +502,21 @@
                                 <input type="radio" name="ubicacion" value="Operativo">Operativo
                               </div>
                               <div class="col-sm-12 padding-0">
-                                <input type="radio" name="ubicacion" value="Casa de citas">Casa de citas
+                                <input type="radio" name="ubicacion" value="Casa_Citas">Casa de citas
                               </div>
                             </div>
                             <div class="col-md-3">
                               <div class="col-sm-12 padding-0">
-                                <input type="radio" name="ubicacion" value="Domicilio Particular">Domicilio Particular
+                                <input type="radio" name="ubicacion" value="Domicilio_Particular">Domicilio Particular
                               </div>
                               <div class="col-sm-12 padding-0">
-                                <input type="radio" name="ubicacion" value="U. Educativa">U. Educativa
+                                <input type="radio" name="ubicacion" value="Unidad_Educativa">U. Educativa
                               </div>
                             </div>
                             <div class="col-md-3">
-                              <div class="form-group"><label class="col-sm-4 control-label text-right">Otro lugar </label>
-                                <div class="col-sm-8 padding-0">
-                                  <input type="text" class="form-control border-bottom" placeholder="Descripcion" name="ubicacion">
-                                </div>
+                              <div class="col-sm-8 padding-0">
+                                <input type="radio" name="ubicacion" value="Otro_Lugar">Otro lugar
+                                <input type="text" class="form-control border-bottom" placeholder="Descripcion" name="otra_ubicacion">
                               </div>
                             </div>
                           </div>
