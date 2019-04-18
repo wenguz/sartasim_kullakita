@@ -24,7 +24,7 @@ class CreateVictimaParentescosTable extends Migration
             $table->string('parentesco_nivel_instruccion')->nullable();
             $table->string('parentesco_ocupacion')->nullable();
             $table->string('parentesco_descripcion')->nullable();
-            $table->string('parentesco_observacion')->nullable();
+            $table->text('parentesco_observacion')->nullable();
             //$table->integer('id_victima_fk');
         });
     }

@@ -568,17 +568,17 @@
                     <div class="media-body box-shadow" style="padding:8px;">
                       <div class="col-md-6">
                         <div class="form-group"><label class="col-sm-4 control-label text-right">Area Social: </label>
-                          <div class="col-sm-12"><textarea type="text" class="form-control" name="docc_obb_social">
+                          <div class="col-sm-12"><input type="text" name="area_t[0]" value="Social" hidden="true"><textarea type="text" class="form-control" name="desc_t[0]">
                           </textarea>
                         </div>
                       </div>
                       <div class="form-group"><label class="col-sm-4 control-label text-right">Area Salud: </label>
-                        <div class="col-sm-12"><textarea type="text" class="form-control"  name="docc_obb_salud">
+                        <div class="col-sm-12"><input type="text" name="area_t[1]" value="Salud" hidden="true"><textarea type="text" class="form-control"  name="desc_t[1]">
                         </textarea>
                       </div>
                     </div>
                     <div class="form-group"><label class="col-sm-4 control-label text-right">Area Legal: </label>
-                      <div class="col-sm-12"><textarea type="text" class="form-control"  name="docc_obb_legal">
+                      <div class="col-sm-12"><input type="text" name="area_t[2]" value="Legal" hidden="true"><textarea type="text" class="form-control"  name="desc_t[2]">
                       </textarea>
                     </div>
                   </div>
@@ -586,12 +586,12 @@
 
                 <div class="col-md-6">
                   <div class="form-group"><label class="col-sm-4 control-label text-right">Area Psicologica: </label>
-                    <div class="col-sm-12"><textarea type="text" class="form-control"  name="docc_obb_psicologica">
+                    <div class="col-sm-12"><input type="text" name="area_t[3]" value="Salud" hidden="true"><textarea type="text" class="form-control"  name="desc_t[3]">
                     </textarea>
                   </div>
                 </div>
                 <div class="form-group"><label class="col-sm-4 control-label text-right">Area Pedagogica: </label>
-                  <div class="col-sm-12"><textarea type="text" class="form-control"  name="docc_obb_pedagogica">
+                  <div class="col-sm-12"><input type="text" name="area_t[4]" value="Pedagogica" hidden="true"><textarea type="text" class="form-control"  name="desc_t[4]">
                   </textarea>
                 </div>
               </div>

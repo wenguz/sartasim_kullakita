@@ -18,7 +18,7 @@ class CreateDocumentoCasosTable extends Migration
             $table->string('docc_num')->nullable();
             $table->date('docc_fecha')->nullable();
             $table->string('docc_estado')->nullable();
-            $table->string('docc_observacion')->nullable();
+            $table->text('docc_observacion')->nullable();
             //$table->('id_caso_fk');
             //$table->('id_parametrica_fk');
         });

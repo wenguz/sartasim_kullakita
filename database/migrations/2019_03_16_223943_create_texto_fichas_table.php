@@ -17,10 +17,10 @@ class CreateTextoFichasTable extends Migration
             $table->increments('id_texto');
             $table->string('texto_ficha');
             $table->string('texto_area');
-            $table->string('texto_seccion');
-            $table->string('texto_descripsion');
+            $table->text('texto_seccion');
+            $table->text('texto_descripsion');
             $table->date('texto_fecha');
-            $table->string('texto_observacion');
+            //$table->string('texto_observacion');
             //$table->integer('id_caso_fk');
         });
     }
