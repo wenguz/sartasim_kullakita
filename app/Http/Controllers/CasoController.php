@@ -375,7 +375,7 @@ class CasoController extends Controller
                         "id_parametrica_fk"=>$id_doc->id_parametrica,
                         "docc_observacion"=> $problematica);
                 }
-                elseif($docs!=null){
+                elseif($problematica!=null){
                     $id_doc=DB::table('parametricas')->where('nombre', 'Violencia_Sexual')->where('dominio',2)->first();
                         $arr_probl[$i] = array ("id_caso_fk"=>$caso->id_caso,
                             "docc_fecha"=>Carbon::now()->toDateTimeString(),
