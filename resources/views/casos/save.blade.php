@@ -487,7 +487,7 @@
                       <div class="media-body box-shadow" style="padding:8px;">
                         <p>Lugar en el que se encontro a la adolescente</p>
                         <!--Inicio opciones-->
-                        <div class="form-group"><label class="col-sm-12 control-labelt">Lugar</label>
+                        <div class="form-group"><label class="col-sm-12 control-labelt">Lugar *</label>
                           <div class="col-sm-12">
                             <div class="col-md-3">
                               <div class="col-sm-12 padding-0">
@@ -535,23 +535,23 @@
                           <div class="col-sm-12">
                             <div class="col-md-3">
                               <div class="col-sm-12 padding-0">
-                                <input type="checkbox" name="pertenencia" value="Bajo Inventario">Bajo Inventario
+                                <input type="checkbox" name="pertenencia[0]" value="Bajo_Inventario">Bajo Inventario
                               </div>
                             </div>
                             <div class="col-md-3">
                               <div class="col-sm-12 padding-0">
-                                <input type="checkbox" name="pertenencia" value="Recepcion Objetos de valor">Recepcion Objetos de valor
+                                <input type="checkbox" name="pertenencia[1]" value="Recepcion_Objetos_de_valor">Recepcion Objetos de valor
                               </div>
                             </div>
                             <div class="col-md-3">
                               <div class="col-sm-12 padding-0">
-                                <input type="checkbox" name="pertenencia" value="Dinero">Dinero
+                                <input type="checkbox" name="pertenencia[2]" value="Dinero">Dinero
                               </div>
                             </div>
                             <div class="col-md-3">
                               <div class="col-sm-12 padding-0">
-                                <input type="checkbox" name="option">Otras pertenencias
-                                <input type="text" name="pertenencia" class="form-control border-bottom" placeholder="descripsion">
+                                <input type="checkbox" name="pertenencia[3]" value="Otra_Pertenencia">Otras pertenencias
+                                <input type="text" name="pertenencia[4]" class="form-control border-bottom" placeholder="descripsion">
                               </div>
                             </div>
                           </div>

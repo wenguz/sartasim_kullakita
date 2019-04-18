@@ -15,6 +15,7 @@ use App\Responsable;
 use App\Paramertrica;
 use App\DocumentoCaso;
 use App\TextoFicha;
+use App\Pertenencia;
 
 use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
@@ -444,6 +445,32 @@ class CasoController extends Controller
                    'docc_observacion'=>$d_ob,
                     ]);
                   $lugar->save();
+            //Recepcion pertenencias
+                 $arr_pert= array();
+                 $pertenencias=$request['pertenencia'];
+                foreach ($pertenencias as $i => $pertenencia) {
+                     if ($pertenencia!=null && $pertenencia!='Otra_Pertenencia') {
+                        $arr_pert[$i] = array (
+                                "id_victima_fk"=>$vic->id_victima,
+                                "estado"=>'Tiene',
+                                "descripsion"=>$pertenencia);
+                    }
+                    elseif($request['otro_doc_medico']!=null){
+                       $arr_pert[$i] = array (
+                                    "id_victima_fk"=>$vic->id_victima,
+                                    "estado"=>'Tiene',
+                                    "descripsion"=>$pertenencia[4]);
+                    }
+                }
+                     foreach ($arr_pert as $ar_pert) {
+                         $pert=Pertenencia::create([
+                    'id_victima_fk'=>$ar_pert["id_victima_fk"],
+                    'estado'=>$ar_pert["estado"],
+                    'descripsion'=>$ar_pert["descripsion"],
+                    ]);
+                     $pert->save();
+                     }
+
 
 
 
