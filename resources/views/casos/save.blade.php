@@ -442,27 +442,31 @@
                         <div class="col-md-6">
                           <div class="form-group"><label class="col-sm-4 control-label text-right">Tratamiento Medico: </label>
                             <div class="col-sm-8 padding-0">
-                              <input type="radio" name="trat_medico" value="Si" >Si
-                              <input type="radio" name="trat_medico" value="No" checked="true">No
+                              <input type="text" name="nom_salud[0]" value="Tratamiento_Medico" hidden="true">
+                              <input type="radio" name="estado_salud[0]" value="Si" >Si
+                              <input type="radio" name="estado_salud[0]" value="No" checked="true">No
                             </div>
                           </div>
                           <div class="form-group"><label class="col-sm-4 control-label text-right">Recetas Adjuntas: </label>
                             <div class="col-sm-8 padding-0">
-                              <input type="radio" name="receta_adj" value="Si">Si
-                              <input type="radio" name="receta_adj" value="No" checked="true">No
+                              <input type="text" name="nom_salud[1]" value="Receta_Medica" hidden="true">
+                              <input type="radio" name="estado_salud[1]" value="Si">Si
+                              <input type="radio" name="estado_salud[1]" value="No" checked="true">No
                             </div>
                           </div>
                         </div>
                         <div class="col-md-6">
                           <div class="form-group"><label class="col-sm-4 control-label text-right">Certificado medico forence: </label>
                             <div class="col-sm-8 padding-0">
-                              <input type="radio" name="certificado_for" value="Si">Si
-                              <input type="radio" name="certificado_for" value="No" checked="true">No
+                              <input type="text" name="nom_salud[2]" value="Certificado_Forence" hidden="true">
+                              <input type="radio" name="estado_salud[2]" value="Si">Si
+                              <input type="radio" name="estado_salud[2]" value="No" checked="true">No
                             </div>
                           </div>
                           <div class="form-group"><label class="col-sm-4 control-label text-right">Otro: </label>
                             <div class="col-sm-8 padding-0">
-                              <input type="text" class="form-control border-bottom" placeholder="Descripcion" name="doc_medico">
+                              <input type="text" name="nom_salud[3]" value="Otros_Documentos" hidden="true">
+                              <input type="text" class="form-control border-bottom" placeholder="Descripcion" name="otro_doc_medico">
                             </div>
                           </div>
                         </div>

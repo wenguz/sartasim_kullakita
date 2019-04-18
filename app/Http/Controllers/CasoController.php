@@ -395,6 +395,39 @@ class CasoController extends Controller
                 ]);
                  $prob->save();
                  }
+            //Antecedentes de salud
+             $arr_ant= array();
+             $nom_ant=$request['nom_salud'];
+             $estado_ant=$request['estado_salud'];
+             for ($i=0; $i < 4; $i++) {
+                $id_ant=DB::table('parametricas')->where('nombre', $nom_ant[$i])->where('estado','ingreso')->first();
+                if ($id_ant!=null && $nom_ant[$i]!='Otros_Documentos') {
+                    $arr_ant[$i] = array ("id_caso_fk"=>$caso->id_caso,
+                       "docc_fecha"=>Carbon::now()->toDateTimeString(),
+                        "docc_estado"=>$estado_ant[$i],
+                        "id_parametrica_fk"=>$id_ant->id_parametrica,
+                        "docc_observacion"=>$request['docc_observacion_medico']);
+                }
+                elseif($request['otro_doc_medico']!=null){
+                    $id_ant=DB::table('parametricas')->where('nombre', 'Otros_Documentos')->where('estado','ingreso')->first();
+                        $arr_ant[$i] = array ("id_caso_fk"=>$caso->id_caso,
+                            "docc_fecha"=>Carbon::now()->toDateTimeString(),
+                            "docc_estado"=>'Tiene',
+                            "id_parametrica_fk"=>$id_ant->id_parametrica,
+                            "docc_observacion"=>$request['otro_doc_medico']);
+                }
+             }
+                 foreach ($arr_ant as $ar_ant) {
+                     $doc_salud_in=DocumentoCaso::create([
+                'id_caso_fk'=>$ar_ant["id_caso_fk"],
+                'docc_fecha'=>$ar_ant["docc_fecha"],
+                'docc_estado'=>$ar_ant["docc_estado"],
+                'id_parametrica_fk'=>$ar_ant["id_parametrica_fk"],
+                'docc_observacion'=>$ar_ant["docc_observacion"],
+
+                ]);
+                  $doc_salud_in->save();
+                 }
 
 
         //Redirigir a la lista de casos
