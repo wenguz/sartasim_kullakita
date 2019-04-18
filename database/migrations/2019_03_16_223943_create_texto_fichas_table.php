@@ -18,7 +18,7 @@ class CreateTextoFichasTable extends Migration
             $table->string('texto_ficha');
             $table->string('texto_area');
             $table->text('texto_seccion');
-            $table->text('texto_descripsion');
+            $table->text('texto_descripsion')->nullable();
             $table->date('texto_fecha');
             //$table->string('texto_observacion');
             //$table->integer('id_caso_fk');
