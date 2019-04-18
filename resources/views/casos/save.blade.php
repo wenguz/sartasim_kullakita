@@ -615,7 +615,7 @@
               <div class="media-body box-shadow" style="padding:8px;">
                 <div class="col-md-6">
                   <div class="form-group"><label class="col-sm-4 control-label text-right">Fecha: </label>
-                    <div class="col-sm-12"><textarea type="text" class="form-control">
+                    <div class="col-sm-12"><input type="text" name="area_t[5]" value="Fecha" hidden="true"><textarea type="text" class="form-control" name="desc_t[5]">
                     </textarea>
                   </div>
                 </div>
@@ -624,7 +624,7 @@
 
               <div class="col-md-6">
                 <div class="form-group"><label class="col-sm-4 control-label text-right">Acciones: </label>
-                  <div class="col-sm-12"><textarea type="text" class="form-control">
+                  <div class="col-sm-12"><input type="text" name="area_t[6]" value="Acciones" hidden="true"><textarea type="text" class="form-control" name="desc_t[6]">
                   </textarea>
                 </div>
               </div>

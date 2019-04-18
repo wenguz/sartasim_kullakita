@@ -471,12 +471,19 @@ class CasoController extends Controller
         $accion_texto=array();
         $area_t=$request['area_t'];
         $descripsion_t=$request['desc_t'];
-        for($i=0; $i < 5; $i++) {
+
+        for($i=0; $i < 7; $i++) {
+            if ($area_t[$i]=='Fecha' || $area_t[$i]=='Acciones') {
+               $seccion='Programacion de Acciones Conjuntas';
+            }
+            else{
+                $seccion='Acciones inmediatas a seguir';
+            }
             $accion_texto[$i]=array(
                 "id_caso_fk"=>$caso->id_caso,
                 "texto_ficha"=>'ingreso',
                 "texto_area"=>$area_t[$i],
-                "texto_seccion"=>'Acciones inmediatas a seguir',
+                "texto_seccion"=>$seccion,
                 "texto_descripsion"=>$descripsion_t[$i],
                 "texto_fecha"=>Carbon::now()->toDateTimeString(),
            );
@@ -492,6 +499,8 @@ class CasoController extends Controller
             ]);
              $acciones->save();
         }
+        //programacion de acciones conjuntas
+
 
 
 
