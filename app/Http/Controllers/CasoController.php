@@ -467,7 +467,7 @@ class CasoController extends Controller
         ]);
            $pert->save();
         }
-    //Acciones a seguir por el refugio
+    //Acciones a seguir por el refugio  y programacion de acciones conjuntas
         $accion_texto=array();
         $area_t=$request['area_t'];
         $descripsion_t=$request['desc_t'];
@@ -499,11 +499,53 @@ class CasoController extends Controller
             ]);
              $acciones->save();
         }
-        //programacion de acciones conjuntas
+    //Pie de formualrio
+         $ins_caso5=Institucion::create([
+                'ins_nombre'=>'Sartasim Kullakita',
+                'ins_municipio_r'=>'Urbano',
+                'ins_municipio_u'=>'Municipio_obrajes',
+            ]);
+             $ins_caso5->save();
+            $ins_caso6=InstitucionCaso::create([
+                'accion'=>$request['persona_accion_0'],
+                'id_caso_fk'=>$caso->id_caso,
+                'id_institucion_fk'=>$ins_caso5->id_institucion,
+
+            ]);
+            $ins_caso6->save();
+             $p_resp1=Persona::create([
+                'persona_nombre'=>$request['persona_nombre_0'],
+                'persona_apellido'=>$request['persona_apellido_0'],
+            ]);
+            $p_resp1->save();
+            $p_cargo1=Responsable::create([
+                'cargo'=>$request['persona_cargo_0'],
+                'id_persona_fk'=>$p_resp1->id_persona,
+                'id_ins_caso_fk'=>$ins_caso6->id_ins_caso,
+            ]);
+            $p_cargo1->save();
+            //Persona que deriva
+            $ins_caso7=InstitucionCaso::create([
+                'accion'=>$request['persona_accion_1'],
+                'id_caso_fk'=>$caso->id_caso,
+                'id_institucion_fk'=>$ins_caso5->id_institucion,
+
+            ]);
+            $ins_caso7->save();
+
+            $p_resp2=Persona::create([
+                'persona_nombre'=>$request['persona_nombre_1'],
+                'persona_apellido'=>$request['persona_apellido_1'],
+            ]);
+            $p_resp2->save();
 
 
-
-
+            $p_cargo2=Responsable::create([
+                'cargo'=>$request['persona_cargo_1'],
+                'id_persona_fk'=>$p_resp2->id_persona,
+                'id_ins_caso_fk'=>$ins_caso7->id_ins_caso,
+            ]);
+            $p_cargo2->save();
 
         //Redirigir a la lista de casos
 return Redirect::to('casos')->with('notice', 'Caso guardado correctamente.');

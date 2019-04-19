@@ -636,25 +636,29 @@
     <div class="col-md-6">
       <div class="form-group" style="padding:5px; font-size: 20px;">
         <div class="col-sm-6">
-          <input type="text" class="form-control border-bottom" name="persona_nombre_res">
+          <input type="text" class="form-control border-bottom" name="persona_nombre_0" required="true">
+          <input type="text" name="persona_cargo_0" value="Responsable" hidden="true">
+          <input type="text" name="persona_accion_0" value="Responsable Ingreso" hidden="true">
         </div>
         <div class="col-sm-6">
-          <input type="text" class="form-control border-bottom" name="persona_apellido_res">
+          <input type="text" class="form-control border-bottom" name="persona_apellido_0" required="true">
         </div>
-        <label class="col-sm-6 control-label text-center">Nombre de la Responsable de Ingreso</label>
-        <label class="col-sm-6 control-label text-center">Apellido de la Responsable de Ingreso</label>
+        <label class="col-sm-6 control-label text-center">Nombre de la Responsable de Ingreso *</label>
+        <label class="col-sm-6 control-label text-center">Apellido de la Responsable de Ingreso *</label>
       </div>
     </div>
     <div class="col-md-6">
       <div class="form-group" style="padding:5px; font-size: 20px;">
         <div class="col-sm-6">
-          <input type="text" class="form-control border-bottom" name="persona_nombre_der">
+          <input type="text" class="form-control border-bottom" name="persona_nombre_1" required="true">
+          <input type="text" name="persona_cargo_1" value="Derivacion" hidden="true">
+          <input type="text" name="persona_accion_1" value="Responsable Derivacion" hidden="true">
         </div>
         <div class="col-sm-6">
-          <input type="text" class="form-control border-bottom" name="persona_apellido_der">
+          <input type="text" class="form-control border-bottom" name="persona_apellido_1" required="true">
         </div>
-        <label class="col-sm-6 control-label text-center">Nombre de la Responsable de Derivacion</label>
-        <label class="col-sm-6 control-label text-center">Apellido de la Responsable de Derivacion</label>
+        <label class="col-sm-6 control-label text-center">Nombre de la Responsable de Derivacion *</label>
+        <label class="col-sm-6 control-label text-center">Apellido de la Responsable de Derivacion *</label>
       </div>
     </div>
     <div class="col-md-12">
