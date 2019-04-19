@@ -213,6 +213,7 @@
                     </div>
                   <!--Fin seccion 2-->
                     <input type="button" class="next-form btn btn-info" value="Next" />
+                    <label class=" control-label text-center">[*] Texto que debe ser llenado obligatoriamente</label>
                 </fieldset>
 
                 <fieldset>
@@ -401,6 +402,7 @@
                   <!--Fin seccion 3-->
                   <input type="button" name="previous" class="previous-form btn btn-default" value="Previous" />
                   <input type="button" name="next" class="next-form btn btn-info" value="Next" />
+                  <label class=" control-label text-center">[*] Texto que debe ser llenado obligatoriamente</label>
                 </fieldset>
 
                 <fieldset>
@@ -479,6 +481,7 @@
                   <!--Fin seccion 5-->
                   <input type="button" name="previous" class="previous-form btn btn-default" value="Previous" />
                   <input type="button" name="next" class="next-form btn btn-info" value="Next" />
+                  <label class=" control-label text-center">[*] Texto que debe ser llenado obligatoriamente</label>
                 </fieldset>
                 <fieldset>
                   <!--Inicio seccion 6-->
@@ -605,6 +608,7 @@
 
         <input type="button" name="previous" class="previous-form btn btn-default" value="Previous" />
         <input type="button" name="next" class="next-form btn btn-info" value="Next" />
+        <label class=" control-label text-center">[*] Texto que debe ser llenado obligatoriamente</label>
       </fieldset>
 
 
@@ -667,6 +671,7 @@
       </center>
     </div>
      <input type="button" name="previous" class="previous-form btn btn-default" value="Previous" />
+     <label class=" control-label text-center">[*] Texto que debe ser llenado obligatoriamente</label>
   </fieldset>
 </div>
 </form>
