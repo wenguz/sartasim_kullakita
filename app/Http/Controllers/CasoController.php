@@ -213,7 +213,7 @@ class CasoController extends Controller
            $parentesco->save();
 
         }
-    //defensoria q interna
+        //defensoria q interna
         $def_int=Institucion::create([
             'ins_nombre'=>$request['defensoria_interna_0'].' '.$request['defensoria_interna_1'],
             'ins_municipio_u'=>$request['defensoria_interna_2'],
@@ -228,7 +228,7 @@ class CasoController extends Controller
             'id_institucion_fk'=>$id_def_int,
         ]);
         $ins_caso1->save();
-    //institucion responsable
+        //institucion responsable
         $ins_resp=Institucion::create([
             'ins_nombre'=>$request['ins_responsable_0'].' '.$request['ins_responsable_1'],
             'ins_telefono'=>$request['ins_responsable_2'],
@@ -242,7 +242,7 @@ class CasoController extends Controller
             'id_institucion_fk'=>$id_ins_resp,
         ]);
         $ins_caso2->save();
-    //persona responsable
+        //persona responsable
         $responsable=Persona::create([
             'persona_nombre'=>$request['persona_responsable_0'],
             'persona_apellido'=>$request['persona_responsable_1'],
@@ -255,7 +255,7 @@ class CasoController extends Controller
         ]);
         $responsable1->save();
 
-    //Modalidad de ingreso 1
+        //Modalidad de ingreso 1
         if($request['docc_oj_1']=='Tiene'){
          $id_oj=DB::table('parametricas')->where('nombre', $request['docc_oj_0'])->first();
 
@@ -329,7 +329,7 @@ class CasoController extends Controller
             $ins_caso4->save();
         }
 
-    //Documnetos presentados al ingresar
+        //Documnetos presentados al ingresar
         $arr_doc= array();
         $doc=$request['docc_estado_in'];
         foreach ($doc as $i => $docs) {
@@ -363,7 +363,7 @@ class CasoController extends Controller
         }
 
 
-    //Problematicas de ingreso
+        //Problematicas de ingreso
         $arr_probl= array();
         $problematicas=$request['problematica'];
         foreach ($problematicas as $i => $problematica) {
@@ -394,7 +394,7 @@ class CasoController extends Controller
         ]);
            $prob->save();
         }
-    //Antecedentes de salud
+        //Antecedentes de salud
         $arr_ant= array();
         $nom_ant=$request['nom_salud'];
         $estado_ant=$request['estado_salud'];
@@ -426,7 +426,7 @@ class CasoController extends Controller
         ]);
            $doc_salud_in->save();
         }
-    //Antecedentes de Lugar
+        //Antecedentes de Lugar
         $id_lugar=DB::table('parametricas')->where('nombre', $request['ubicacion'])->where('dominio',3)->first();
         if ($request['ubicacion']=='Otro_Lugar') {
            $d_ob=$request['otra_ubicacion'];
@@ -442,7 +442,7 @@ class CasoController extends Controller
             'docc_observacion'=>$d_ob,
         ]);
         $lugar->save();
-    //Recepcion pertenencias
+         //Recepcion pertenencias
         $arr_pert= array();
         $pertenencias=$request['pertenencia'];
         foreach ($pertenencias as $i => $pertenencia) {
@@ -467,7 +467,7 @@ class CasoController extends Controller
         ]);
            $pert->save();
         }
-    //Acciones a seguir por el refugio  y programacion de acciones conjuntas
+        //Acciones a seguir por el refugio  y programacion de acciones conjuntas
         $accion_texto=array();
         $area_t=$request['area_t'];
         $descripsion_t=$request['desc_t'];
@@ -499,7 +499,7 @@ class CasoController extends Controller
             ]);
              $acciones->save();
         }
-    //Pie de formualrio
+        //Pie de formualrio
          $ins_caso5=Institucion::create([
                 'ins_nombre'=>'Sartasim Kullakita',
                 'ins_municipio_r'=>'Urbano',
@@ -548,14 +548,11 @@ class CasoController extends Controller
             $p_cargo2->save();
 
         //Redirigir a la lista de casos
-return Redirect::to('casos')->with('notice', 'Caso guardado correctamente.');
-} else {
-    echo "Error in registering...Please try again later!";
-}
-
-
-
-}
+        return Redirect::to('casos')->with('notice', 'Caso guardado correctamente.');
+        } else {
+            echo "Error in registering...Please try again later!";
+         }
+    }
 
 public function show($id)
     {/*
