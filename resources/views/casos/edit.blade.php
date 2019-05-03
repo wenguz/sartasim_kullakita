@@ -57,7 +57,7 @@
 							                          </div>
 							                          <br>
 							                          <div class="form-group"><label class="col-sm-8 control-label">Edad: </label>
-							                            <div class="col-sm-10"><input type="text" name="vic_edad" class="form-control border-bottom" value="{{$victima->vic_edad}}" disabled="true">
+							                            <div class="col-sm-10"><input type="text" name="vic_edad" class="form-control border-bottom" value="{{$victima->vic_edad}}">
 							                            </div>
 							                          </div>
 							                          <br>
@@ -66,19 +66,29 @@
 							                          <br>
 							                          <div class="form-group"><label class="col-sm-8 control-label">DNI:</label>
 							                            <div class="col-sm-10 padding-0">
-
-								                              <input type="radio" name="vic_estado_dni" value="Tiene" checked="true">Tiene
-								                              <input type="radio" name="vic_estado_dni" value="No tiene"> No Tiene
-
+							                            	@foreach($tipodoc as $tipodocs)
+							                            		@if($tipodocs['doc_nombre']=='DNI' && $tipodocs['doc_estado']=='Tiene')
+										                            <input type="radio" name="vic_estado_dni" value="Tiene" checked="true">Tiene
+										                            <input type="radio" name="vic_estado_dni" value="No tiene"> No Tiene
+										                        @elseif($tipodocs['doc_nombre']=='DNI' && $tipodocs['doc_estado']=='No tiene')
+										                        	<input type="radio" name="vic_estado_dni" value="Tiene" >Tiene
+										                            <input type="radio" name="vic_estado_dni" checked="true"> No Tiene
+										                        @endif
+										                    @endforeach
 							                            </div>
 							                          </div>
 							                          <br>
 							                          <div class="form-group"><label class="col-sm-8 control-label ">Carnet Identidad:</label>
 							                            <div class="col-sm-10 padding-0">
-
-								                              <input type="radio" name="vic_estado_ci" value="Tiene" checked="true">Tiene
-								                              <input type="radio" name="vic_estado_ci" value="No tiene" > No Tiene
-
+							                            	@foreach($tipodoc as $tipodocs)
+							                            		@if($tipodocs['doc_nombre']=='CI' && $tipodocs['doc_estado']=='Tiene')
+										                            <input type="radio" name="vic_estado_ci" value="Tiene" checked="true">Tiene
+										                            <input type="radio" name="vic_estado_ci" value="No tiene" > No Tiene
+										                        @elseif($tipodocs['doc_nombre']=='CI' && $tipodocs['doc_estado']=='No tiene')
+										                        	<input type="radio" name="vic_estado_ci" value="Tiene">Tiene
+										                            <input type="radio" name="vic_estado_ci" value="No tiene" checked="true"> No Tiene
+										                         @endif
+										                    @endforeach
 							                            </div>
 							                          </div>
 							                          <br>
@@ -121,21 +131,28 @@
 							                          <br>
 							                          <br>
 							                          <div class="form-group"><label class="col-sm-8 control-label">N° DNI:</label>
-
-
-							                            <div class="col-sm-10"><input type="text"
-							                            	class="form-control border-bottom"
-							                            	name="vic_num_dni"
-
-							                            	></div>
-
+							                          	<div class="col-sm-10">
+							                          		@foreach($tipodoc as $tipodocs)
+							                            		@if($tipodocs['doc_nombre']=='DNI' && $tipodocs['doc_estado']=='Tiene')
+							                            		    <input type="text" class="form-control border-bottom" name="vic_num_dni" value="{{$tipodocs['doc_numero']}}">
+							                            		@elseif($tipodocs['doc_nombre']=='DNI' && $tipodocs['doc_estado']=='No tiene')
+							                            			<input type="text" class="form-control border-bottom" name="vic_num_dni">
+							                            		@endif
+										                    @endforeach
+							                            </div>
 							                          </div>
 							                          <br>
 							                          <br>
 							                          <div class="form-group"><label class="col-sm-8 control-label">N° CI:</label>
-
-							                            <div class="col-sm-10"><input type="text" class="form-control border-bottom" name="vic_num_ci" ></div>
-
+							                            <div class="col-sm-10">
+							                            	@foreach($tipodoc as $tipodocs)
+							                            		@if($tipodocs['doc_nombre']=='CI' && $tipodocs['doc_estado']=='Tiene')
+							                            			<input type="text" class="form-control border-bottom" name="vic_num_ci" value="{{$tipodocs['doc_numero']}}">
+							                            		@elseif($tipodocs['doc_nombre']=='CI' && $tipodocs['doc_estado']=='No tiene')
+							                            			<input type="text" class="form-control border-bottom" name="vic_num_ci">
+							                            		@endif
+										                    @endforeach
+							                            </div>
 							                          </div>
 							                          <br>
 							                          <br>
@@ -153,15 +170,20 @@
 								                          <br>
 								                          <div class="form-group"><label class="col-sm-8 control-label">Certificado Nacimiento:</label>
 								                            <div class="col-sm-10 padding-0">
-
-									                              <input type="radio" name="vic_estado_cn" value="Tiene" checked="true">Tiene
-									                              <input type="radio" name="vic_estado_cn" value="No tiene" > No Tiene
-
+								                            	@foreach($tipodoc as $tipodocs)
+								                            		@if($tipodocs['doc_nombre']=='Certificado Nacimiento' && $tipodocs['doc_estado']=='Tiene')
+											                            <input type="radio" name="vic_estado_cn" value="Tiene" checked="true">Tiene
+											                            <input type="radio" name="vic_estado_cn" value="No tiene" > No Tiene
+											                        @elseif($tipodocs['doc_nombre']=='Certificado Nacimiento' && $tipodocs['doc_estado']=='No tiene')
+											                        	<input type="radio" name="vic_estado_cn" value="Tiene" >Tiene
+											                            <input type="radio" name="vic_estado_cn" value="No tiene" checked="true"> No Tiene
+											                        @endif
+										                    	@endforeach
 								                            </div>
 								                          </div>
 								                          <br>
 								                          <div class="form-group"><label class="col-sm-8 control-label">Num. hermanos: *</label>
-								                            <div class="col-sm-10"><input type="text" class="form-control border-bottom" name="vic_num_hermanos" id="vic_num_hermanos" required="true" value="{{$victima->vic_num_hermanos}}"></div>
+								                            <div class="col-sm-10"><input type="text" class="form-control border-bottom" name="vic_num_hermanos" id="vic_num_hermanos" required="true" value="{{$victima->vic_num_hermanos}}" disabled="true"></div>
 								                          </div>
 								                          <br>
 								                          <div class="form-group"><label class="col-sm-8 control-label">Direccion:</label>
@@ -171,16 +193,24 @@
 								                          <br>
 								                          <br>
 								                          <div class="form-group"><label class="col-sm-8 control-label">Otro doc. identidad:</label>
-
-								                            <div class="col-sm-10"><input type="text" class="form-control border-bottom" name="vic_doc_idn"  ></div>
-
+								                          	@foreach($tipodoc as $tipodocs)
+								                            	@if($tipodocs['doc_nombre']!='CI' &&  $tipodocs['doc_nombre']!='DNI' &&  $tipodocs['doc_nombre']!='Certificado Nacimiento' && $tipodocs['doc_estado']=='Tiene')
+									                            	<div class="col-sm-10"><input type="text" class="form-control border-bottom" name="vic_doc_idn" value="{{$tipodocs['doc_nombre']}}" ></div>
+									                           	@elseif($tipodocs['doc_nombre']!='CI' &&  $tipodocs['doc_nombre']!='DNI' &&  $tipodocs['doc_nombre']!='Certificado Nacimiento' && $tipodocs['doc_estado']=='No tiene')
+									                            	<div class="col-sm-10"><input type="text" class="form-control border-bottom" name="vic_doc_idn"></div>
+									                            @endif
+										                    @endforeach
 								                          </div>
 								                          <br>
 								                          <br>
 								                          <div class="form-group"><label class="col-sm-8 control-label">CI Expira: </label>
-
-									                            <div class="col-sm-10"><input type="date" class="form-control border-bottom" name="ci_expira" ></div>
-
+								                          	@foreach($tipodoc as $tipodocs)
+								                            		@if($tipodocs['doc_nombre']=='CI' && $tipodocs['doc_estado']=='Tiene')
+									                            		<div class="col-sm-10"><input type="date" class="form-control border-bottom" name="ci_expira" value="{{$tipodocs['doc_expira']}}"></div>
+									                            	@elseif($tipodocs['doc_nombre']=='CI' && $tipodocs['doc_estado']=='No tiene')
+									                            		<div class="col-sm-10"><input type="date" class="form-control border-bottom" name="ci_expira"></div>
+									                            	@endif
+										                    @endforeach
 								                          </div>
 								                          <br>
 								                          <br>

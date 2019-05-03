@@ -584,7 +584,7 @@ public function show($id)
             ->with('tipodoc',$tipodoc)
             ->with('lugarna',$lugarna);
 
-        }
+    }
 
         public function update(Request $request, $id)
     {/*
