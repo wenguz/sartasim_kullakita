@@ -565,8 +565,8 @@ public function show($id)
         }
 
         public function edit($id)
-    {/*
-        $caso= Caso::where(array(
+    {
+        $caso=Caso::where(array(
             'id_caso' => $id,
         ))->first();
         $victima= Victima::where(array(
@@ -581,8 +581,9 @@ public function show($id)
         return View('casos.edit')
             ->with('caso', $caso)
             ->with('victima',$victima)
-            ->with('tipodoc',$tipodoc);
-            */
+            ->with('tipodoc',$tipodoc)
+            ->with('lugarna',$lugarna);
+
         }
 
         public function update(Request $request, $id)
