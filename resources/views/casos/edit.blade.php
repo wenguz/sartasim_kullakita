@@ -223,6 +223,87 @@
 						                      	</div>
 					                    	</div>
 					                  	<!--Fin seccion 1-->
+					                  	<!--Inicio seccion 2   revisar: https://www.eduardocollado.com/2016/11/17/formularios-html-con-campos-dinamicos-en-javascript/    -->
+						                    <div class="media" style="border-style:outset; padding:5px; font-size: 14px;">
+						                      <a class="media-heading">2.- Antecedentes Familiares </a>
+						                      	<div class="media-body box-shadow" style="padding:5px;">
+						                      		<!--Inicio tabla muestra aprientes-->
+						                      			<div class="col-md-12">
+															<div class="table-container">
+																<div class="responsive-table" >
+																	<table class="table table-striped " border="1px" align="center">
+																		<thead class="thead-dark">
+																			<tr>
+																				<th scope="col">Id</th>
+																				<th scope="col">Nombre y Apellido</th>
+																				<th scope="col">Telefono</th>
+																				<th scope="col">Celular</th>
+																				<th scope="col">Parentesco</th>
+
+																			</tr>
+																		</thead>
+																		<tbody border="1px">
+																			@if($pariente->count() )
+																			@forelse($pariente as $parientes)
+																			<tr>
+																				<td>{{$parientes['id_victima_parentesco']}}</td>
+																				<td>{{$parientes['parentesco_nombre']}} {{$parientes['parentesco_apellido']}}</td>
+																				<td>{{$parientes['parentesco_telefono']}}</td>
+																				<td>{{$parientes['parentesco_celular']}}</td>
+																				<td scope="row">{{$parientes['parentesco_descripcion']}}</td>
+																			</tr>
+																			<tr>
+																				<td>Observacion</td>
+																				<td>{{$parientes['parentesco_observacion']}}</td></tr>
+																			@endforeach
+																			@else
+																			<tr>
+																				<td colspan="7">No hay registros !!</td>
+																			</tr>
+																			@endif
+																		</tbody>
+																	</table>
+
+																</div>
+															</div>
+														</div>
+						                      		<!--Fin tabla muestra parientes-->
+							                        <!--Inicio formulario dinamico parentesco-->
+								                        <!--https://programacion.net/articulo/anadir_y_eliminar_campos_inputs_dinamicamente_mediante_jquery_1816?fbclid=IwAR3AJo4g3w-llOsfcAleMYwrD9bxvyMjdnZtGCpAMp4rjwztsYqiDFOII-c-->
+								                        <div class="field_wrapper">
+								                          <div class="col-md-12">
+								                            <label class="control-label text-right">Nombres: *</label>
+								                            <input type="text" name="parentesco_nombre[]" value="" required="true" />
+
+								                            <label class="control-label text-right">Apellidos: *</label>
+								                            <input type="text" name="parentesco_apellido[]" value=""/>
+
+								                            <label class="control-label text-right">Telefono:</label>
+								                            <input type="text" name="parentesco_telefono[]" value=""/>
+
+								                            <label class="control-label text-right">Celular:</label>
+								                            <input type="text" name="parentesco_celular[]" value=""/>
+
+								                            <label class="control-label text-right">Parentesco:</label>
+								                            <select name="pariente[]">
+								                              <option value="Padres">Padres</option>
+								                              <option value="Hermanos">Hermanos</option>
+								                              <option value="Tios">Tios</option>
+								                              <option value="Abuelos">Abuelos</option>
+								                            </select>
+
+								                            <a href="javascript:void(0);" class="add_button fa fa-plus-square" title="Add field"></a>
+								                          </div>
+								                        </div>
+							                        <!--Finformulario dinamico parentesco-->
+							                        <div class="form-group"><label class="col-sm-12 control-label ">Observaciones:</label>
+							                          <div class="col-sm-12">
+							                            <textarea type="text" class="form-control" name="parentesco_observacion"></textarea>
+							                          </div>
+							                        </div>
+						                      	</div>
+						                    </div>
+                  						<!--Fin seccion 2-->
 					                    <input type="button" class="next-form btn btn-info" value="Next" />
 					                    <label class=" control-label text-center">[*] Texto que debe ser llenado obligatoriamente</label>
 					                </fieldset>

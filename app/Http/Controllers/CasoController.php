@@ -566,23 +566,32 @@ public function show($id)
 
         public function edit($id)
     {
-        $caso=Caso::where(array(
-            'id_caso' => $id,
-        ))->first();
-        $victima= Victima::where(array(
-            'id_caso_fk' => $id,
-        ))->first();
-        $lugarna=LugarNacimiento::where(array(
-                'id_lugarna'=>$victima->id_lugarna_fk,
-        ))->first();
-        $tipodoc=TipoDocumento::where(array(
-                'id_victima_fk'=>$victima->id_victima,
-        ))->get();
+        //Inicio editar Seccion 1
+            $caso=Caso::where(array(
+                'id_caso' => $id,
+            ))->first();
+            $victima= Victima::where(array(
+                'id_caso_fk' => $id,
+            ))->first();
+            $lugarna=LugarNacimiento::where(array(
+                    'id_lugarna'=>$victima->id_lugarna_fk,
+            ))->first();
+            $tipodoc=TipoDocumento::where(array(
+                    'id_victima_fk'=>$victima->id_victima,
+            ))->get();
+        //fin editar seccion 1
+        //Inicio editrar seccion 2
+            $pariente=VictimaParentesco::where(array(
+                'id_victima_fk' => $victima->id_victima,
+            ))->get();
+        //Fin editar seccion 2
+
         return View('casos.edit')
             ->with('caso', $caso)
             ->with('victima',$victima)
             ->with('tipodoc',$tipodoc)
-            ->with('lugarna',$lugarna);
+            ->with('lugarna',$lugarna)
+            ->with('pariente',$pariente);
 
     }
 
