@@ -5,6 +5,7 @@ use Illuminate\Database\Seeder;
 
 //para ejecutar php artisan db:seed
 use Illuminate\Support\Facades\DB;
+//si aparece algun error ejecutar: composer dump-autoload
 class ParametricasTableSeeder extends Seeder
 {
     /**
